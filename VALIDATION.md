@@ -18,6 +18,17 @@ Rust 1.94.0 toolchain.
 On macOS, the original path tests require `TMPDIR=/private/tmp`.
 The Python extension was built with `CARGO_PROFILE_RELEASE_STRIP=none`.
 
+## Source versions
+
+For reproduction, use a release or commit of this unified repository. The
+table records the original source snapshots from which it was assembled.
+
+| Component | Original commit |
+| --- | --- |
+| Evaluation | `23b54eea35c60605e690ae3d2f63142545d60400` |
+| Planner | `6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3` |
+| Lance | `c768d004506231f4f5d81f61b9cbc55ccfc904f3` |
+
 ## Reproduction fixes
 
 - Figure 10 now renders at the paper PDF's size, `500.76 × 279.906 pt`.

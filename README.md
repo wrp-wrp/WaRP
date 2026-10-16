@@ -2,34 +2,30 @@
 
 Ruipeng Wan, Xinyu Zeng, Yiming Qiao, and Huanchen Zhang.
 
-Paper status: **Accept with Shepherding** for PVLDB Volume 20 (VLDB 2027),
-with the artifact availability check pending.
+**Paper status:** Under shepherding for PVLDB Volume 20 (VLDB 2027).
 
-Code and experiments for WaRP. The planner groups byte-range reads into
-object-store requests. The paper implementation integrates request planning
-and cluster reordering into Lance.
+WaRP groups byte-range reads into object-store requests to reduce request
+overhead during vector retrieval. This repository contains the standalone
+planner, the Lance implementation used in the paper, and the experiments.
 
 ## Contents
 
 | Directory | Purpose |
 | --- | --- |
 | [planner/](planner/) | Standalone Rust library and Python binding |
-| [evaluation/](evaluation/) | Experiments, frozen measurements, and figure/table scripts |
+| [evaluation/](evaluation/) | Experiments, recorded measurements, and figure/table scripts |
 | [lance/](lance/) | Lance fork used by the paper |
-
-The submitted code and measurements are included here. Reproduction fixes,
-documentation updates, and original file hashes are recorded in
-`SOURCE_MANIFEST.json`. Frozen measurements are unchanged.
 
 ## Reproduce the paper
 
-Each workflow below starts at the repository root.
+Start each workflow below from the repository root.
 
-### Local redraw: frozen measurements, no AWS required
+### Recreate figures and tables locally
 
-Regenerate the paper figures and tables from the bundled measurements.
-Use Python 3.12 and install Poppler: `sudo apt-get install poppler-utils` on Ubuntu or
-`brew install poppler` on macOS. On macOS, also set `export TMPDIR=/private/tmp`.
+This uses the included measurements and requires no AWS account. Use Python
+3.12 and install Poppler with `sudo apt-get install poppler-utils` on Ubuntu
+or `brew install poppler` on macOS. On macOS, set `export TMPDIR=/private/tmp`
+before running the checks.
 
 ```bash
 cd evaluation
@@ -40,13 +36,14 @@ bash scripts/run_all.sh --profile light
 python -m artifact compare
 ```
 
-The script checks frozen inputs and writes regenerated figures and tables to
-each experiment's `_regen/` directory. This workflow has passed local validation.
+Generated files go to each experiment's `_regen/` directory. The comparison
+command checks them against the paper figures and tables.
 
-### Run measurements: Linux and a writable S3 bucket
+### Rerun experiments on S3
 
-Start with one S3 experiment. Configure the bucket, region, and AWS credentials
-before running the measurement command.
+Use a Linux host with AWS credentials and a writable S3 bucket. Start with
+the small request-fanout experiment below, setting your bucket and region
+in the environment file before running it.
 
 ```bash
 cd evaluation
@@ -59,23 +56,31 @@ bash scripts/run_all.sh --only real-s3-tiny-request-fanout-sanity --plan
 bash scripts/run_all.sh --only real-s3-tiny-request-fanout-sanity
 ```
 
-The scripts build the bundled Lance and prepare the selected experiment.
-Measurements go to its `data/latest/`; figure runs also write `_latest/`.
-Linux/S3 execution still awaits validation.
+The scripts build the bundled Lance and prepare the experiment. Measurements
+go to `data/latest/`; experiments with figures also write `_latest/`.
+The `--plan` option prints the commands without executing them.
 
-For all experiments, configure [Figure 4's network topologies](evaluation/runners/figure-04-object-store-io/README.md),
-then run these commands from `evaluation/`:
+To run all experiments, configure [Figure 4's network topologies](evaluation/runners/figure-04-object-store-io/README.md),
+then run from `evaluation/`:
 
 ```bash
 bash scripts/run_all.sh --plan
 bash scripts/run_all.sh
 ```
 
-Full runs incur cloud charges, download large datasets, and can take several days.
-See the [experiment guide](evaluation/README.md) for setup details and the
-[figure/table map](evaluation/docs/PAPER_ARTIFACTS_MAP.md) to select an experiment.
+Full runs download large datasets, incur cloud charges, and can take several
+days. Figure 1 uses recorded latency values; its script does not make new
+S3 measurements.
 
-## Call the planner
+We have tested local redraws and the standalone planner on macOS (arm64).
+The Linux/S3 workflow has not yet been validated end to end. See
+[VALIDATION.md](VALIDATION.md) for the environment, commands, and results.
+
+The [experiment guide](evaluation/README.md) covers data preparation and
+individual runs. Use the [figure/table map](evaluation/docs/PAPER_ARTIFACTS_MAP.md)
+to find the experiment for a paper result.
+
+## Use the standalone planner
 
 Run the Rust example from the repository root:
 
@@ -90,33 +95,16 @@ CARGO_PROFILE_RELEASE_STRIP=none python -m pip install ./planner/python
 python planner/python/examples/quickstart.py
 ```
 
-The standalone library accepts byte ranges, a cost model, and constraints,
-then returns a merge plan. Rust and Python share one core. The paper's Lance
-experiments use a separate implementation preserved in `lance/`.
-See [planner/README.md](planner/README.md) for the API and guarantee scope.
+The library takes byte ranges, a cost model, and constraints, then returns a
+merge plan. Rust and Python share one core. The paper experiments use a
+separate implementation in `lance/`. See the [planner guide](planner/README.md)
+for the API and algorithm guarantees.
 
-## Versions and validation
-
-| Component | Submitted commit |
-| --- | --- |
-| Evaluation | `23b54eea35c60605e690ae3d2f63142545d60400` |
-| Planner | `6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3` |
-| Lance | `c768d004506231f4f5d81f61b9cbc55ccfc904f3` |
-
-Local validation covered 17 offline checks, 93 experiment-framework tests,
-121 Rust tests/doctests, and 25 Python tests. The frozen inputs and the Lance
-build-source fingerprint were checked. Live S3 measurements and the full
-Lance benchmark build remain pending. See [VALIDATION.md](VALIDATION.md)
-for the commands, environment, and validation limits.
-
-## Reproduction notes
-
-The Figure 10 renderer now uses the paper's layout. PDF comparison rejects
-aspect-ratio differences above 2% before resizing images. Figure 1 exports
-recorded measurement values; its run command does not collect new S3 data.
+Original component versions, file hashes, and reproduction changes are
+recorded in the [source manifest](SOURCE_MANIFEST.json).
 
 ## License and citation
 
-See `CITATION.cff` for the paper citation. Final PVLDB metadata is pending.
-Each component retains its LICENSE and NOTICE files. External datasets and
-dependencies retain their own licenses.
+See [CITATION.cff](CITATION.cff) to cite this work. The code is licensed under
+Apache-2.0; each component includes its LICENSE and NOTICE files. External
+datasets and dependencies retain their own licenses.
