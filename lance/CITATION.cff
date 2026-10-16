@@ -26,5 +26,5 @@ preferred-citation:
     - family-names: "Zhang"
       given-names: "Huanchen"
 license: Apache-2.0
-repository-code: "https://anonymous.4open.science/r/lance-s3-io-optimization-anon-95B5"
+repository-code: "https://github.com/wrp-wrp/WaRP"
 url: "https://github.com/lancedb/lance"

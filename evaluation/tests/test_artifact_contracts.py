@@ -209,6 +209,21 @@ MESSAGE = f"endpoint={{URI}}"
         url = f"https://github.com/{owner}/private-artifact"
         self.assertIn("private GitHub repository URL", _privacy_violations(url))
 
+    def test_privacy_scanner_allows_the_artifact_repository(self) -> None:
+        owner = public_hygiene.PUBLIC_GIT_EMAIL.split("@", 1)[0]
+        for path in ("WaRP", "WaRP.git", "WaRP/blob/main/planner/README.md"):
+            with self.subTest(path=path):
+                self.assertEqual(_privacy_violations(f"https://github.com/{owner}/{path}"), [])
+
+    def test_privacy_scanner_rejects_other_repositories_with_the_same_prefix(self) -> None:
+        owner = public_hygiene.PUBLIC_GIT_EMAIL.split("@", 1)[0]
+        for name in ("WaRP-private", "WaRP.private", "WaRP_extra", "WaRP.git-private"):
+            with self.subTest(name=name):
+                self.assertIn(
+                    "private GitHub repository URL",
+                    _privacy_violations(f"https://github.com/{owner}/{name}"),
+                )
+
     def test_opaque_identifiers_are_case_insensitive_and_physical_objects_are_explicit(self) -> None:
         number = 100 + int(uuid.uuid4().hex[:6], 16) % 900
         revision_id = f"F{number:03d}"

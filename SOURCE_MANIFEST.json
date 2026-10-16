@@ -13,8 +13,11 @@
   "sources": [
     {
       "adapted_files": [
+        "CITATION.cff",
+        "NOTICE",
         "PUBLIC_RELEASE_FILES.txt",
         "README.md",
+        "artifact/checks/public_hygiene.py",
         "artifact/compare.py",
         "docs/REPRODUCTION_GUIDE.md",
         "experiments/figure-01-s3-range-get-latency/README.md",
@@ -49,7 +52,8 @@
         "runners/reorder-cost/README.md",
         "runners/s3-piecewise-calibration-curves/README.md",
         "runners/table-01-cluster-coarsening/README.md",
-        "scripts/setup_ec2.sh"
+        "scripts/setup_ec2.sh",
+        "tests/test_artifact_contracts.py"
       ],
       "added_files": {
         "tests/test_artifact_compare.py": {
@@ -2131,10 +2135,25 @@
       "path": "evaluation",
       "repository": "wrp-wrp/warp-experiments",
       "source_updates": {
+        "CITATION.cff": {
+          "reason": "Point citation metadata to the consolidated artifact repository.",
+          "sha256": "00999b97d93b2c680e2d5871d806144e0e3396e8477b9111393169d3654ab571",
+          "size": 857
+        },
+        "NOTICE": {
+          "reason": "Refer to the bundled Lance fork instead of the anonymous source site.",
+          "sha256": "04e538a4ed693e81dc9a8179027cc8e7e8b201be1d3ecfa1fcaa580ef6eb7a74",
+          "size": 891
+        },
         "PUBLIC_RELEASE_FILES.txt": {
           "reason": "Include the comparison regression test in source exports.",
           "sha256": "cf59cb163c37004ac6f0c2e97c10e0f1f3bd1da6c2ab98f4de9fef42f0abbb28",
           "size": 27887
+        },
+        "artifact/checks/public_hygiene.py": {
+          "reason": "Allow the official artifact repository while continuing to reject other author repositories.",
+          "sha256": "5f71e909a7b912209b88fa757da9ce9851bbbd072587c570e550943bb37c9aaf",
+          "size": 17830
         },
         "artifact/compare.py": {
           "reason": "Reject aspect-ratio changes before raster resizing and report both dimensions.",
@@ -2150,12 +2169,19 @@
           "reason": "Install native Lance build prerequisites and check for protoc.",
           "sha256": "5bd388878a140338e011e036138d7ccf2293d63762b70e8d2d402f15b60ae2fc",
           "size": 4566
+        },
+        "tests/test_artifact_contracts.py": {
+          "reason": "Check the official repository exception and reject similarly named private repositories.",
+          "sha256": "15a7639bdd0da88c677ada029134ab7df0433c7d2ae8d777c3d46c33fa92f854",
+          "size": 27061
         }
       }
     },
     {
       "adapted_files": [
         "ARTIFACT.md",
+        "CITATION.cff",
+        "Cargo.toml",
         "PAPER_REPRODUCTION_GUIDE.md",
         "README.md"
       ],
@@ -9276,10 +9302,22 @@
       "id": "lance",
       "path": "lance",
       "repository": "wrp-wrp/lance-s3-io-optimization",
-      "source_updates": {}
+      "source_updates": {
+        "CITATION.cff": {
+          "reason": "Point citation metadata to the consolidated artifact repository.",
+          "sha256": "d907b5dc06cfab996aeb9c8b0cd0fecae74d3c1c915d9bb700580a47ed0fe880",
+          "size": 911
+        },
+        "Cargo.toml": {
+          "reason": "Update only the workspace repository URL; the normalized source fingerprint is unchanged.",
+          "sha256": "0ccbfa1f0a6edb6ac9f5ce0e7aac992be60aae2e120b098a757c4e349352cccb",
+          "size": 8204
+        }
+      }
     },
     {
       "adapted_files": [
+        "CITATION.cff",
         "CONTRIBUTING.md",
         "Cargo.toml",
         "PUBLIC_RELEASE_FILES.txt",
@@ -9287,8 +9325,11 @@
         "python/Cargo.toml",
         "python/README.md",
         "python/examples/README.md",
+        "python/pyproject.toml",
         "rust/Cargo.toml",
-        "rust/examples/README.md"
+        "rust/examples/README.md",
+        "scripts/check_public_release.py",
+        "scripts/tests/test_check_public_release.py"
       ],
       "added_files": {
         "rust-toolchain.toml": {
@@ -10308,10 +10349,15 @@
       "path": "planner",
       "repository": "wrp-wrp/warp-planner",
       "source_updates": {
+        "CITATION.cff": {
+          "reason": "Point citation metadata to the consolidated artifact repository.",
+          "sha256": "85f8be53d2ba892b0f2545fd467e52d80f98d66828623d837c5f7b8e70cb9302",
+          "size": 830
+        },
         "Cargo.toml": {
-          "reason": "Declare the toolchain version validated with the committed dependencies.",
-          "sha256": "a297fe96602e618fd3aeb19c7d281f4310e6ee16266d8d9575ec1b37afc1c8fd",
-          "size": 709
+          "reason": "Declare the validated toolchain and consolidated artifact repository.",
+          "sha256": "c972d0512c1eb6c43c5625871dfee62684ec5ff1aa5252df40b70a5b600cd273",
+          "size": 683
         },
         "PUBLIC_RELEASE_FILES.txt": {
           "reason": "Include the pinned Rust toolchain in source exports.",
@@ -10323,10 +10369,25 @@
           "sha256": "deed0057181e0ec2f4c52faa29ce4a4f8e28a60a4b3687bdf96d7df73c00640e",
           "size": 394
         },
+        "python/pyproject.toml": {
+          "reason": "Point Python package repository and documentation URLs to the consolidated artifact.",
+          "sha256": "9052a830507d3e12450f04052d134fca27da6066a74ef5d0159a168b568458e7",
+          "size": 1203
+        },
         "rust/Cargo.toml": {
-          "reason": "Declare the toolchain version validated with the committed dependencies.",
-          "sha256": "ba45e823d068025b0bcfc4399b6fc86329fcac62e2b8a5c44bb9b5e5e1c85c95",
-          "size": 1740
+          "reason": "Declare the validated toolchain and current repository/documentation URLs.",
+          "sha256": "b9cf274bc448a4d953e484d3927ef7292e670c1d90e43b0d1f4daeb339d81729",
+          "size": 1737
+        },
+        "scripts/check_public_release.py": {
+          "reason": "Allow the official artifact repository while continuing to reject other author repositories.",
+          "sha256": "4b9bafc40fbab166cf27051d69b1c6adc56ed078b1ad437cf0556c0a8efa1c3b",
+          "size": 7810
+        },
+        "scripts/tests/test_check_public_release.py": {
+          "reason": "Test the official repository exception and reject similarly named private repositories.",
+          "sha256": "0333b59c9d97111fb20025398bfdfa05ef06e0a357702a15c86bb509a6e45293",
+          "size": 6400
         }
       }
     }

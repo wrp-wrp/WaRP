@@ -5,11 +5,12 @@ Rust 1.94.0 toolchain.
 
 | Check | Result |
 | --- | --- |
-| `cd evaluation && python -m artifact check` | 17 checks passed, including 91 framework tests |
+| `cd evaluation && python -m artifact check` | 17 checks passed |
 | `cd evaluation && python -m artifact compare` | 12 PDFs passed; 3 TeX tables matched exactly |
+| `cd evaluation && python -m unittest discover -s tests -v` | 93 framework tests passed |
 | `cd planner && cargo test --locked --release -p warp-planner` | 121 tests and doctests passed |
 | `python -m pytest planner/python/tests -q` | 25 tests passed |
-| `cd planner && make release-check` | 11 release-check tests and the metadata check passed |
+| `cd planner && make release-check` | 13 release-check tests and the metadata check passed |
 | Rust and Python quickstarts | Passed after rebuilding the Python extension |
 | Frozen-data integrity | All 191 inputs matched their recorded hashes |
 | Lance source check | Matched the pinned build-source fingerprint |
@@ -35,6 +36,13 @@ The Python extension was built with `CARGO_PROFILE_RELEASE_STRIP=none`.
 `SOURCE_MANIFEST.json` retains the original file hashes and records each
 documentation update, source fix, and added file. Frozen measurements and
 the Lance implementation were not changed.
+
+## Repository links
+
+Citation, Cargo, and Python package metadata point to the consolidated
+repository and its component README files. The privacy checks allow this
+artifact repository and continue to reject other author repositories,
+including names that share the `WaRP` prefix.
 
 ## Remaining validation
 

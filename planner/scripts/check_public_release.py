@@ -23,7 +23,9 @@ ALLOWED_EMAILS = {"wrp-wrp@users.noreply.github.com"}
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PERSONAL_PATH_RE = re.compile(r"/(?:home|Users)/[A-Za-z0-9._-]+/")
 PRIVATE_HOST_RE = re.compile(r"\bip-(?:[0-9]+-){3}[0-9]+\.[A-Za-z0-9.-]*internal\b")
-PRIVATE_REPOSITORY_RE = re.compile(r"github[.]com/wrp-wrp/")
+PRIVATE_REPOSITORY_RE = re.compile(
+    r"github[.]com/wrp-wrp/(?!WaRP(?:\.git)?(?![A-Za-z0-9_.-]))"
+)
 ACCESS_KEY_RE = re.compile(r"\bA(?:KIA|SIA)[A-Z0-9]{16}\b")
 PRIVATE_KEY_RE = re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----")
 SECRET_ASSIGNMENT_RE = re.compile(

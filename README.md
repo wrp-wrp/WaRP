@@ -74,7 +74,7 @@ can take several days.
 | Planner | `6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3` |
 | Lance | `c768d004506231f4f5d81f61b9cbc55ccfc904f3` |
 
-Local validation covered 17 offline checks, 91 experiment-framework tests,
+Local validation covered 17 offline checks, 93 experiment-framework tests,
 121 Rust tests/doctests, and 25 Python tests. The frozen inputs and the Lance
 build-source fingerprint were checked. Live S3 measurements and the full
 Lance benchmark build remain pending. See [VALIDATION.md](VALIDATION.md)

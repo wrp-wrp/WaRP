@@ -29,8 +29,8 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
-Documentation = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
+Repository = "https://github.com/wrp-wrp/WaRP"
+Documentation = "https://github.com/wrp-wrp/WaRP/blob/main/planner/python/README.md"
 
 [tool.maturin]
 module-name = "vecio_planner"

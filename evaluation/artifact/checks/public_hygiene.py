@@ -37,7 +37,9 @@ HARDCODED_BUCKET_DEFAULT = re.compile(
 PRIVATE_CLOUD_IDENTITY = re.compile(
     r"(?:\bi-[0-9a-f]{8,17}\b|\bip-[0-9-]+\.[A-Za-z0-9.-]*compute\.internal\b)"
 )
-PRIVATE_REPOSITORY_URL = re.compile(r"github[.]com/wrp-wrp/")
+PRIVATE_REPOSITORY_URL = re.compile(
+    r"github[.]com/wrp-wrp/(?!WaRP(?:\.git)?(?![A-Za-z0-9_.-]))"
+)
 EMAIL_ADDRESS = re.compile(
     r"\b[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
 )

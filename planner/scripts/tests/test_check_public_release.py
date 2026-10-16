@@ -51,6 +51,23 @@ class TreeViolationsTest(unittest.TestCase):
         url = "https://github.com/" + "wrp-wrp/private-artifact"
         self.assertTrue(self.violations("README.md", url + "\n"))
 
+    def test_artifact_repository_urls_are_allowed(self) -> None:
+        owner = CHECK.RELEASE_IDENTITY.split("<", 1)[1].split("@", 1)[0]
+        for path in ("WaRP", "WaRP.git", "WaRP/blob/main/planner/README.md"):
+            with self.subTest(path=path):
+                self.assertEqual(
+                    self.violations("README.md", f"https://github.com/{owner}/{path}\n"),
+                    [],
+                )
+
+    def test_other_repository_names_with_the_artifact_prefix_are_rejected(self) -> None:
+        owner = CHECK.RELEASE_IDENTITY.split("<", 1)[1].split("@", 1)[0]
+        for name in ("WaRP-private", "WaRP.private", "WaRP_extra", "WaRP.git-private"):
+            with self.subTest(name=name):
+                self.assertTrue(
+                    self.violations("README.md", f"https://github.com/{owner}/{name}\n")
+                )
+
     def test_placeholders_are_allowed(self) -> None:
         self.assertEqual(
             self.violations(
