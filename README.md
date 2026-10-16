@@ -1,6 +1,9 @@
-# [VLDB2027] WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage
+# WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage
 
 Ruipeng Wan, Xinyu Zeng, Yiming Qiao, and Huanchen Zhang.
+
+Paper status: **Accept with Shepherding** for PVLDB Volume 20 (VLDB 2027),
+with the artifact availability check pending.
 
 Code and experiments for WaRP. The planner groups byte-range reads into
 object-store requests. The paper implementation integrates request planning
