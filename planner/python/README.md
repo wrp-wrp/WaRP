@@ -1,7 +1,8 @@
 # Python binding
 
 `vecio_planner` calls the checked Rust planner through PyO3. Version 0.1.0 is
-available from source and requires Python 3.9+ and Rust 1.82+.
+available from source and requires Python 3.9+. The repository pins the
+validated Rust 1.94.0 toolchain; install Rust through rustup.
 
 ## Install
 

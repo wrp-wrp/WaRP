@@ -67,7 +67,7 @@ if [[ "$INSTALL_SYSTEM" -eq 1 ]] && command -v apt-get >/dev/null 2>&1; then
   sudo_wrap apt-get install -y --no-install-recommends \
     python3 python3-pip python3-venv \
     git rsync openssh-client build-essential \
-    cmake \
+    cmake pkg-config libssl-dev protobuf-compiler \
     curl ca-certificates \
     poppler-utils
 fi
@@ -91,6 +91,13 @@ case "$INSTALL_CARGO" in
     ;;
   *) NEED_CARGO=0 ;;
 esac
+if [[ "$NEED_CARGO" -eq 1 ]]; then
+  if ! command -v protoc >/dev/null 2>&1; then
+    warn "protoc is required for Lance; install protobuf-compiler before building"
+    exit 1
+  fi
+  log "protobuf: $(protoc --version)"
+fi
 if [[ "$NEED_CARGO" -eq 1 ]] && ! command -v cargo >/dev/null 2>&1; then
   log "installing cargo via rustup (minimal profile)"
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal

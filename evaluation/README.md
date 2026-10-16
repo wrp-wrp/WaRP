@@ -43,9 +43,9 @@ python -m artifact compare
 On macOS, set `export TMPDIR=/private/tmp` before running the original tests.
 The checks verify file hashes, schemas, runner interfaces, and the experiment
 catalog, then regenerate the paper figures and tables. PDF comparisons use a
-10% pixel threshold; generated TeX tables must match byte for byte. See the
-[repository README](../README.md#known-reproduction-issues) for the Figure 10
-layout limitation.
+10% pixel threshold and reject aspect-ratio differences above 2% before
+resizing images. Generated TeX tables must match byte for byte. Figure 1
+exports recorded values; it does not collect new S3 measurements.
 
 To render selected experiments from frozen measurements:
 

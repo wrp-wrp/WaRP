@@ -188,6 +188,7 @@ rust/tests/data/sift_paper_pca_4096x128/query_0030.json
 rust/tests/data/sift_paper_pca_4096x128/query_0031.json
 rust/tests/golden.rs
 rust/tests/main_solution_optimality.rs
+rust-toolchain.toml
 scripts/bench.sh
 scripts/check_public_release.py
 scripts/prepare-fixtures.sh

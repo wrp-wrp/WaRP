@@ -1,6 +1,7 @@
 # Figure 1: S3 Range-GET latency
 
-Prepares the frozen latency breakdown used in the introduction figure.
+Exports the eight recorded latency rows used in the introduction figure.
+This script writes fixed values to CSV; it does not measure S3 latency.
 Run from `evaluation/`:
 
 ```bash

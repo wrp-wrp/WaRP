@@ -11,14 +11,18 @@ The repository has three distinct workflows:
 | Workflow | Input | Output | External services |
 |---|---|---|---|
 | Light validation | committed `data/paper/` | regenerated artifacts under `_regen/` | none |
-| Single-spec rerun | runner-specific datasets and binaries | fresh `data/latest/` | depends on the spec |
-| Full orchestrator | supported local and live-S3 runners | fresh `data/latest/` plus regenerated artifacts | Lance, datasets, AWS/S3 |
+| Single-spec run | runner-specific datasets and binaries | `data/latest/` | depends on the spec |
+| Full orchestrator | supported local and live-S3 runners | `data/latest/` plus regenerated artifacts | Lance, datasets, AWS/S3 |
 
 Light validation covers every registered experiment. Full mode reaches every
 measurement-backed experiment through `artifact/registry.py`, including
 Figures 7, 8, and 11. The figure-05-planning-frontier figure is intentionally
 render-only because it is a deterministic explanatory construction rather than
 a measured system result.
+
+Figure 1 exports its eight recorded measurement rows into `data/latest/`;
+it does not collect new S3 measurements. Its run and render commands reproduce
+the figure from those values.
 
 ## Light validation
 
@@ -44,10 +48,10 @@ and runner/render path consistency. Light rendering writes only to each
 experiment's `_regen/` directory; authoritative paper artifacts are restored
 byte-for-byte after rendering.
 
-`python3 -m artifact compare` requires `pdftoppm` from Poppler. Its default 10%
-pixel threshold tolerates host font/rasterizer drift for PDFs; generated TeX
-tables must match exactly. It is not a replacement for the data-integrity and
-schema checks.
+`python3 -m artifact compare` requires `pdftoppm` from Poppler. It rejects
+aspect-ratio differences above 2% before resizing raster images. Its default
+10% pixel threshold tolerates host font/rasterizer drift; generated TeX tables
+must match exactly. Data-integrity and schema checks run separately.
 
 ## Find and run one spec
 

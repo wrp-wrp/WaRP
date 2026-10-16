@@ -4,7 +4,7 @@ This stage measures serial 1 KiB S3 reads as the requested fanout grows from 1
 to 128. Figure 4 uses its summary together with the separate latency-calibration
 stage.
 
-From the repository root, inspect the fixed paper parameters with:
+From `evaluation/`, inspect the fixed paper parameters with:
 
 ```bash
 python3 -m artifact show real-s3-tiny-request-fanout-sanity --parameters

@@ -1,10 +1,21 @@
 {
-  "description": "Submitted projects stored as planner/, evaluation/, and lance/. The files map retains original SHA-256 hashes, sizes, and Git modes. Only the Markdown documentation listed in documentation_updates has changed; code, configurations, and frozen measurements retain their submitted contents.",
-  "manifest_version": 2,
+  "delivery_files": [
+    ".gitattributes",
+    ".gitignore",
+    "CITATION.cff",
+    "LICENSE",
+    "README.md",
+    "SOURCE_MANIFEST.json",
+    "VALIDATION.md"
+  ],
+  "description": "Submitted projects stored as planner/, evaluation/, and lance/. The files map retains original SHA-256 hashes, sizes, and Git modes. documentation_updates and source_updates record modified original files; added_files records new files. Frozen measurements and the Lance implementation retain their submitted contents.",
+  "manifest_version": 3,
   "sources": [
     {
       "adapted_files": [
+        "PUBLIC_RELEASE_FILES.txt",
         "README.md",
+        "artifact/compare.py",
         "docs/REPRODUCTION_GUIDE.md",
         "experiments/figure-01-s3-range-get-latency/README.md",
         "experiments/figure-04-object-store-io/README.md",
@@ -15,6 +26,7 @@
         "experiments/figure-08-sift100m-concurrency-scaling/README.md",
         "experiments/figure-09-qps-cost/README.md",
         "experiments/figure-10-p-sweep-closedloop/README.md",
+        "experiments/figure-10-p-sweep-closedloop/render_closed_loop_p_sweep.py",
         "experiments/figure-11-greedy-locality-shift/README.md",
         "experiments/figure-12-planner-overhead/README.md",
         "experiments/figure-13-reordering-methods/README.md",
@@ -33,23 +45,33 @@
         "runners/figure-13-reordering-methods/README.md",
         "runners/figure-14-sift1m-sensitivity/README.md",
         "runners/locality-aware-coaccess-gap/README.md",
+        "runners/real-s3-tiny-request-fanout-sanity/README.md",
         "runners/reorder-cost/README.md",
         "runners/s3-piecewise-calibration-curves/README.md",
-        "runners/table-01-cluster-coarsening/README.md"
+        "runners/table-01-cluster-coarsening/README.md",
+        "scripts/setup_ec2.sh"
       ],
+      "added_files": {
+        "tests/test_artifact_compare.py": {
+          "mode": "100644",
+          "reason": "Test chart aspect-ratio rejection, raster-resolution changes, and real pixel differences.",
+          "sha256": "e338dcafa8296ce1d114a9b1caff53feb4ec9e0508704a9d8c09d3c742f84e1c",
+          "size": 1638
+        }
+      },
       "commit": "23b54eea35c60605e690ae3d2f63142545d60400",
       "documentation_updates": {
         "README.md": {
-          "sha256": "4d7b50f5e3b00e83fd7ed77ef113c97ad90694df9f5a88451676ee210c43b058",
-          "size": 4248
+          "sha256": "320e054e9136cfb6a454e26dd24226c619e3f030732f57efc6947e4b6ff4a230",
+          "size": 4286
         },
         "docs/REPRODUCTION_GUIDE.md": {
-          "sha256": "926ab71cf7d127448d1f804acdd44ffb6ad3fd76f147e7839f4b1901a0c2f563",
-          "size": 13011
+          "sha256": "25a236614cd2e333e06a129fcb272356e7266ab9a6da67907df63fe9cf88e410",
+          "size": 13231
         },
         "experiments/figure-01-s3-range-get-latency/README.md": {
-          "sha256": "3f4950a3246bfb99a98b66124e4346352caacb8574f20f69168b9d4cf6377636",
-          "size": 963
+          "sha256": "27e3a8cdd33b6e9908b5eddfeb521e3db0e13e344df4470d2eaa56eae76355d0",
+          "size": 1055
         },
         "experiments/figure-04-object-store-io/README.md": {
           "sha256": "811ca6d338133066a4ba2cfd58d798b822428e7498a2a95a94cbc931779d0859",
@@ -112,8 +134,8 @@
           "size": 1050
         },
         "runners/figure-01-s3-range-get-latency/README.md": {
-          "sha256": "f114ba310db87d9e52ba19585a8df357e02cd168dd11ad1fc5568b7b6e8411fc",
-          "size": 493
+          "sha256": "58be4390be7e7d7a270dc3110ed2249f41284fb81f0f37ca9b1e2d280e4fa69a",
+          "size": 567
         },
         "runners/figure-04-object-store-io/README.md": {
           "sha256": "d121ef84e100fd6c3812e61bb04ee6b1830e3a0ffa29c107edd20982a2fb814e",
@@ -154,6 +176,10 @@
         "runners/locality-aware-coaccess-gap/README.md": {
           "sha256": "199322f78d3cde11857c45816b433125e92f792b83a3e8ad9bf0b68e95354e24",
           "size": 525
+        },
+        "runners/real-s3-tiny-request-fanout-sanity/README.md": {
+          "sha256": "d47998017280cd3e80ce8cb3b843bb8a77fc0a1fcb3f631f4c5aa94f21c77b85",
+          "size": 1156
         },
         "runners/reorder-cost/README.md": {
           "sha256": "5a65f2e42a5de7a622be608b97c0450436ccf17b26a8eb3155168ea6894d19d3",
@@ -2103,7 +2129,29 @@
       "github_commit_tree_verified": true,
       "id": "experiments",
       "path": "evaluation",
-      "repository": "wrp-wrp/warp-experiments"
+      "repository": "wrp-wrp/warp-experiments",
+      "source_updates": {
+        "PUBLIC_RELEASE_FILES.txt": {
+          "reason": "Include the comparison regression test in source exports.",
+          "sha256": "cf59cb163c37004ac6f0c2e97c10e0f1f3bd1da6c2ab98f4de9fef42f0abbb28",
+          "size": 27887
+        },
+        "artifact/compare.py": {
+          "reason": "Reject aspect-ratio changes before raster resizing and report both dimensions.",
+          "sha256": "66cd5d123f69f88794d775d44761b39e16f610bfd5c1d55d6b08208f2ba6859c",
+          "size": 5948
+        },
+        "experiments/figure-10-p-sweep-closedloop/render_closed_loop_p_sweep.py": {
+          "reason": "Restore the paper figure height and subplot spacing.",
+          "sha256": "f7294eea88e8c76c8ff5b58eb14a482473e7a204dfea03f9d6c5f219b9a09166",
+          "size": 11700
+        },
+        "scripts/setup_ec2.sh": {
+          "reason": "Install native Lance build prerequisites and check for protoc.",
+          "sha256": "5bd388878a140338e011e036138d7ccf2293d63762b70e8d2d402f15b60ae2fc",
+          "size": 4566
+        }
+      }
     },
     {
       "adapted_files": [
@@ -2111,6 +2159,7 @@
         "PAPER_REPRODUCTION_GUIDE.md",
         "README.md"
       ],
+      "added_files": {},
       "commit": "c768d004506231f4f5d81f61b9cbc55ccfc904f3",
       "documentation_updates": {
         "ARTIFACT.md": {
@@ -9226,29 +9275,42 @@
       "github_commit_tree_verified": true,
       "id": "lance",
       "path": "lance",
-      "repository": "wrp-wrp/lance-s3-io-optimization"
+      "repository": "wrp-wrp/lance-s3-io-optimization",
+      "source_updates": {}
     },
     {
       "adapted_files": [
         "CONTRIBUTING.md",
+        "Cargo.toml",
+        "PUBLIC_RELEASE_FILES.txt",
         "README.md",
+        "python/Cargo.toml",
         "python/README.md",
         "python/examples/README.md",
+        "rust/Cargo.toml",
         "rust/examples/README.md"
       ],
+      "added_files": {
+        "rust-toolchain.toml": {
+          "mode": "100644",
+          "reason": "Pin Rust 1.94.0 for the standalone planner.",
+          "sha256": "dd510b4a3ab011309bb12f6fc3450596da2080670bd4f922eaff7cad1ca65794",
+          "size": 51
+        }
+      },
       "commit": "6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3",
       "documentation_updates": {
         "CONTRIBUTING.md": {
-          "sha256": "7877008654f404576067e23a86333d6fdafcf8e4f87d4d36e4d893b98ae00a10",
-          "size": 2700
+          "sha256": "abf776c2d51e225e4463be0eaca9ae67b40c1ee3abfbe71af12ed6c7607a474a",
+          "size": 2717
         },
         "README.md": {
-          "sha256": "50daa56a88d85d903bbee6048ce0163ceaaf8ed641b51251941ad3f6e4bc4caf",
-          "size": 4432
+          "sha256": "d8c0477469708bddb0439fd616e554d88dab5fffedf9edd5c0aef289f6988cf8",
+          "size": 4519
         },
         "python/README.md": {
-          "sha256": "9f70b74a4ef47c65debd726b43090e36d1c7c25572bc08e5f2bd4027bca7b725",
-          "size": 3172
+          "sha256": "6ae1bd2aef307f171789b416758bd45bdb5b9848b901e8b91c8f3e689e6a39e4",
+          "size": 3243
         },
         "python/examples/README.md": {
           "sha256": "b2df06bf9777ce7add556c3009b49611a8d83d97b9605cb2f7be7b0da4a99acb",
@@ -10244,7 +10306,29 @@
       "github_commit_tree_verified": true,
       "id": "planner",
       "path": "planner",
-      "repository": "wrp-wrp/warp-planner"
+      "repository": "wrp-wrp/warp-planner",
+      "source_updates": {
+        "Cargo.toml": {
+          "reason": "Declare the toolchain version validated with the committed dependencies.",
+          "sha256": "a297fe96602e618fd3aeb19c7d281f4310e6ee16266d8d9575ec1b37afc1c8fd",
+          "size": 709
+        },
+        "PUBLIC_RELEASE_FILES.txt": {
+          "reason": "Include the pinned Rust toolchain in source exports.",
+          "sha256": "7b463bdff849bea592c5d8ec893f205c28ad0bd96a2bc5f8956285ac65dee5ec",
+          "size": 8644
+        },
+        "python/Cargo.toml": {
+          "reason": "Declare the toolchain version validated with the committed dependencies.",
+          "sha256": "deed0057181e0ec2f4c52faa29ce4a4f8e28a60a4b3687bdf96d7df73c00640e",
+          "size": 394
+        },
+        "rust/Cargo.toml": {
+          "reason": "Declare the toolchain version validated with the committed dependencies.",
+          "sha256": "ba45e823d068025b0bcfc4399b6fc86329fcac62e2b8a5c44bb9b5e5e1c85c95",
+          "size": 1740
+        }
+      }
     }
   ]
 }

@@ -14,8 +14,9 @@ and cluster reordering into Lance.
 | [evaluation/](evaluation/) | Experiments, frozen measurements, and figure/table scripts |
 | [lance/](lance/) | Lance fork used by the paper |
 
-Code and frozen data retain the submitted versions. Documentation changes
-and the original file hashes are recorded in `SOURCE_MANIFEST.json`.
+The submitted code and measurements are included here. Reproduction fixes,
+documentation updates, and original file hashes are recorded in
+`SOURCE_MANIFEST.json`. Frozen measurements are unchanged.
 
 ## Reproduce figures and tables
 
@@ -42,7 +43,7 @@ to locate a paper figure or table.
 Run the Rust example from the repository root:
 
 ```bash
-cargo run --locked --release --manifest-path planner/Cargo.toml --example quickstart
+cargo +1.94.0 run --locked --release --manifest-path planner/Cargo.toml --example quickstart
 ```
 
 For Python, activate a virtual environment, then run:
@@ -73,19 +74,17 @@ can take several days.
 | Planner | `6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3` |
 | Lance | `c768d004506231f4f5d81f61b9cbc55ccfc904f3` |
 
-Local validation covered 17 offline checks, 88 experiment-framework tests,
+Local validation covered 17 offline checks, 91 experiment-framework tests,
 121 Rust tests/doctests, and 25 Python tests. The frozen inputs and the Lance
 build-source fingerprint were checked. Live S3 measurements and the full
-Lance benchmark build remain pending.
+Lance benchmark build remain pending. See [VALIDATION.md](VALIDATION.md)
+for the commands, environment, and validation limits.
 
-## Known reproduction issues
+## Reproduction notes
 
-The submitted Figure 10 renderer produces a different aspect ratio from the
-saved PDF. The original image comparison can accept this difference because
-it resizes images. The earlier
-[packaged-layout branch](https://github.com/wrp-wrp/WaRP/tree/archive/packaged-layout-2026-10-16)
-contains the layout repair and a stricter comparison. The renderer on `main`
-retains the submitted version.
+The Figure 10 renderer now uses the paper's layout. PDF comparison rejects
+aspect-ratio differences above 2% before resizing images. Figure 1 exports
+recorded measurement values; its run command does not collect new S3 data.
 
 ## License and citation
 

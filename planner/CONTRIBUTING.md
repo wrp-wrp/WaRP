@@ -11,8 +11,8 @@ bash scripts/quickstart.sh              # cargo test --release + --features prob
 bash scripts/quickstart.sh --with-python # also maturin develop + pytest
 ```
 
-Requires Rust 1.82+ and (for the Python extension) Python 3.9+ with
-maturin.
+Use the pinned Rust 1.94.0 toolchain and, for the Python extension,
+Python 3.9+ with maturin.
 
 The directory is `planner/`. The Rust crate is `warp-planner`
 (`warp_planner`); the Python package is `vecio-planner` (`vecio_planner`).

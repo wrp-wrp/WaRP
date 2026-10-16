@@ -382,5 +382,6 @@ src/plotting/__init__.py
 src/plotting/bar_palette.py
 src/plotting/paper_plot_style.py
 src/request_executor.py
+tests/test_artifact_compare.py
 tests/test_artifact_contracts.py
 tests/test_paper_runner_contracts.py

@@ -14,7 +14,7 @@ default-members = ["rust"]
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.82"
+rust-version = "1.94"
 license = "Apache-2.0"
 repository = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
 

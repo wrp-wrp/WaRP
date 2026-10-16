@@ -14,7 +14,8 @@ implementation is in [../lance](../lance/); it is separate from this library.
 
 ## Quick start
 
-Run these commands from `planner/`. Rust 1.82+ is required.
+Run these commands from `planner/`. The repository pins Rust 1.94.0, the
+version used for validation. Install Rust through rustup to use this pin.
 
 ### Rust
 

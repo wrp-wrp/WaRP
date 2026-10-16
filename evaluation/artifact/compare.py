@@ -64,6 +64,11 @@ def _pixel_diff(left: Path, right: Path) -> tuple[float, str]:
         raise SystemExit("Pillow required: `pip install pillow`")
     l_img = Image.open(left).convert("RGB")
     r_img = Image.open(right).convert("RGB")
+    dimensions = f"{l_img.width}x{l_img.height} vs {r_img.width}x{r_img.height}"
+    left_aspect = l_img.width / l_img.height
+    right_aspect = r_img.width / r_img.height
+    if abs(right_aspect / left_aspect - 1.0) > 0.02:
+        return float("inf"), dimensions + " (aspect mismatch)"
     if r_img.size != l_img.size:
         r_img = r_img.resize(l_img.size, Image.LANCZOS)
     # Sum of absolute per-channel differences across all pixels,
@@ -76,8 +81,7 @@ def _pixel_diff(left: Path, right: Path) -> tuple[float, str]:
     num_pixels = l_img.size[0] * l_img.size[1]
     max_total = num_pixels * 3 * 255
     pct = 100.0 * total_abs_diff / max_total
-    dim = f"{l_img.size[0]}x{l_img.size[1]}"
-    return pct, dim
+    return pct, dimensions
 
 
 def parse_args() -> argparse.Namespace:
@@ -103,7 +107,7 @@ def main() -> int:
     failed: list[str] = []
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
-        print(f"{'spec':<45}{'authoritative':<18}{'regen':<18}{'diff':>10}")
+        print(f"{'spec':<45}{'paper vs regenerated':<40}{'diff':>10}")
         for spec in specs:
             for rel in spec.paper_artifacts:
                 authoritative = ROOT / rel
@@ -121,7 +125,7 @@ def main() -> int:
                     right = _rasterise(regenerated, tmp_dir, args.dpi)
                     pct, dim = _pixel_diff(left, right)
                     status = "!" if pct > args.threshold else " "
-                    print(f"{spec.id:<45}{dim:<18}{dim:<18}{pct:>8.3f}% {status}")
+                    print(f"{spec.id:<45}{dim:<40}{pct:>8.3f}% {status}")
                     if pct > args.threshold:
                         failed.append(f"{spec.id}:{rel}")
                 else:
