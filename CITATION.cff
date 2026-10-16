@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this artifact, please cite the WaRP paper using the preferred citation."
-title: "WaRP: Consolidated Source and Reproduction Artifact"
+title: "WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage"
 type: software
 authors:
   - family-names: "Wan"
@@ -26,4 +26,4 @@ preferred-citation:
     - family-names: "Zhang"
       given-names: "Huanchen"
 license: Apache-2.0
-repository-code: "https://github.com/wrp-wrp/warp-artifact"
+repository-code: "https://github.com/wrp-wrp/WaRP-VLDB2027"

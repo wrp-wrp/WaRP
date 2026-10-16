@@ -73,6 +73,6 @@ representative end-to-end performance/recall comparison, public input-data
 downloads, and complete heavyweight reruns remain to be verified on the
 target environment. The source and original fixed protocols are included.
 
-The permanent source repository is [wrp-wrp/warp-artifact](https://github.com/wrp-wrp/warp-artifact).
+The permanent source repository is [wrp-wrp/WaRP-VLDB2027](https://github.com/wrp-wrp/WaRP-VLDB2027).
 Final publication metadata will be added when assigned. This consolidated
 artifact has not yet been submitted to CMT for the new availability check.

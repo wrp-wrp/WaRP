@@ -20,7 +20,7 @@ In another Rust project, use a path dependency pointing to the bundled core:
 
 ```toml
 [dependencies]
-warp-planner = { path = "/path/to/warp-artifact/third_party/warp-planner/rust" }
+warp-planner = { path = "/path/to/WaRP-VLDB2027/third_party/warp-planner/rust" }
 ```
 
 ```rust

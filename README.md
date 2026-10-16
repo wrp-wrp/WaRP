@@ -1,4 +1,4 @@
-# WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage
+# [VLDB2027] WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage
 
 This repository contains the complete source release for the WaRP paper:
 the paper experiments and frozen measurements, the Lance implementation used
@@ -9,7 +9,7 @@ repository checkout or Git submodule is required for the paper workflows.
 Authors: Ruipeng Wan, Xinyu Zeng, Yiming Qiao, and Huanchen Zhang.
 Publication metadata will be added after the final PVLDB decision.
 
-Permanent source repository: [wrp-wrp/warp-artifact](https://github.com/wrp-wrp/warp-artifact).
+Permanent source repository: [wrp-wrp/WaRP-VLDB2027](https://github.com/wrp-wrp/WaRP-VLDB2027).
 
 ## Choose a workflow
 
