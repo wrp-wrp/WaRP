@@ -21,25 +21,59 @@ The submitted code and measurements are included here. Reproduction fixes,
 documentation updates, and original file hashes are recorded in
 `SOURCE_MANIFEST.json`. Frozen measurements are unchanged.
 
-## Reproduce figures and tables
+## Reproduce the paper
+
+Each workflow below starts at the repository root.
+
+### Local redraw: frozen measurements, no AWS required
+
+Regenerate the paper figures and tables from the bundled measurements.
+Use Python 3.12 and install Poppler: `sudo apt-get install poppler-utils` on Ubuntu or
+`brew install poppler` on macOS. On macOS, also set `export TMPDIR=/private/tmp`.
 
 ```bash
 cd evaluation
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-light.txt
-python -m artifact check
+bash scripts/run_all.sh --profile light
 python -m artifact compare
 ```
 
-Install Poppler first: `sudo apt-get install poppler-utils` on Ubuntu or
-`brew install poppler` on macOS. On macOS, set `export TMPDIR=/private/tmp`
-before the checks to account for the original path tests.
+The script checks frozen inputs and writes regenerated figures and tables to
+each experiment's `_regen/` directory. This workflow has passed local validation.
 
-These commands verify the frozen measurements and regenerate figures and
-tables locally. See [evaluation/README.md](evaluation/README.md) for live
-measurements and [the artifact map](evaluation/docs/PAPER_ARTIFACTS_MAP.md)
-to locate a paper figure or table.
+### Run measurements: Linux and a writable S3 bucket
+
+Start with one S3 experiment. Configure the bucket, region, and AWS credentials
+before running the measurement command.
+
+```bash
+cd evaluation
+bash scripts/setup_ec2.sh
+cp scripts/run_all.env.example scripts/run_all.env
+# Edit scripts/run_all.env: VECIO_S3_BUCKET and VECIO_S3_REGION.
+# Configure AWS credentials through the standard provider chain.
+
+bash scripts/run_all.sh --only real-s3-tiny-request-fanout-sanity --plan
+bash scripts/run_all.sh --only real-s3-tiny-request-fanout-sanity
+```
+
+The scripts build the bundled Lance and prepare the selected experiment.
+Measurements go to its `data/latest/`; figure runs also write `_latest/`.
+Linux/S3 execution still awaits validation.
+
+For all experiments, configure [Figure 4's network topologies](evaluation/runners/figure-04-object-store-io/README.md),
+then run these commands from `evaluation/`:
+
+```bash
+bash scripts/run_all.sh --plan
+bash scripts/run_all.sh
+```
+
+Full runs incur cloud charges, download large datasets, and can take several days.
+See the [experiment guide](evaluation/README.md) for setup details and the
+[figure/table map](evaluation/docs/PAPER_ARTIFACTS_MAP.md) to select an experiment.
 
 ## Call the planner
 
@@ -60,14 +94,6 @@ The standalone library accepts byte ranges, a cost model, and constraints,
 then returns a merge plan. Rust and Python share one core. The paper's Lance
 experiments use a separate implementation preserved in `lance/`.
 See [planner/README.md](planner/README.md) for the API and guarantee scope.
-
-## Run live experiments
-
-Use the instructions in [evaluation/README.md](evaluation/README.md).
-The scripts discover `../lance` and check its fixed source fingerprint.
-The reported environment is EC2 `c7gn.8xlarge` with same-region S3 in
-`ap-northeast-1`. Full runs download large datasets, write S3 objects, and
-can take several days.
 
 ## Versions and validation
 
