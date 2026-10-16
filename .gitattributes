@@ -1,4 +1,2 @@
-# These frozen CSV snapshots retain their original CRLF bytes so their
-# evidence hashes stay stable. Treat them as binary for whitespace checks.
-experiments/figure-04-object-store-io/stages/real-s3-tiny-request-fanout-sanity/data/paper/summary.csv -text whitespace=-trailing-space
-experiments/figure-07-real-lance-metrics/data/paper/figure7_source.csv -text whitespace=-trailing-space
+# Preserve the submitted source and frozen measurement bytes on every platform.
+* -text

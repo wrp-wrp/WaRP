@@ -297,7 +297,7 @@ class ProductionCampaignLockTests(unittest.TestCase):
 
     def test_binary_resolves_to_an_exported_companion_root(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory).resolve()
+            root = Path(directory)
             (root / "Cargo.toml").write_text("[workspace]\n", encoding="utf-8")
             (root / "Cargo.lock").write_text("lock\n", encoding="utf-8")
             (root / "rust").mkdir()
@@ -497,7 +497,7 @@ class TinyFanoutRunnerContractTests(unittest.TestCase):
 
     def test_companion_root_supplies_built_lance_binaries(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            lance_root = Path(directory).resolve() / "lance"
+            lance_root = Path(directory) / "lance"
             with mock.patch.dict(
                 os.environ,
                 {"VECIO_LANCE_ROOT": str(lance_root)},

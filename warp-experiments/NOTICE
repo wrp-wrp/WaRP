@@ -15,10 +15,7 @@ depend on third-party Python packages (matplotlib, numpy, pandas, scipy,
 scikit-learn, pyyaml, pillow); each package is distributed under its own
 license, and no source from those packages is bundled here.
 
-The end-to-end real-Lance experiments invoke the fixed Lance fork included
-under third_party/lance. It retains its own LICENSE and NOTICE files
-(Apache-2.0, derived from github.com/lancedb/lance).
-
-The independent planner is included under third_party/warp-planner and
-retains its own LICENSE and NOTICE files. Original source revisions and
-file hashes of all three components are recorded in SOURCE_MANIFEST.json.
+The end-to-end real-Lance experiments invoke the separate Lance fork at
+https://anonymous.4open.science/r/lance-s3-io-optimization-anon-95B5, which carries its own
+LICENSE + NOTICE files (Apache-2.0, derived from
+github.com/lancedb/lance).

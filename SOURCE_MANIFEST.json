@@ -1,21 +1,9 @@
 {
-  "description": "Fixed source snapshots for the consolidated WaRP artifact. Explicit adaptations cover packaging, source/release checks, macOS test-path portability, and restoration of Figure 10 layout. Both algorithm implementations and every frozen measurement retain the captured bytes.",
+  "description": "Three submitted source snapshots stored as sibling projects. All component file contents and Git file modes match the recorded commits. Only the outer delivery documents and metadata are new.",
   "manifest_version": 1,
   "sources": [
     {
-      "adapted_files": [
-        ".gitignore",
-        "CITATION.cff",
-        "NOTICE",
-        "PUBLIC_RELEASE_FILES.txt",
-        "README.md",
-        "artifact/checks/public_hygiene.py",
-        "artifact/compare.py",
-        "artifact/smoke.py",
-        "docs/REPRODUCTION_GUIDE.md",
-        "experiments/figure-10-p-sweep-closedloop/render_closed_loop_p_sweep.py",
-        "tests/test_paper_runner_contracts.py"
-      ],
+      "adapted_files": [],
       "commit": "23b54eea35c60605e690ae3d2f63142545d60400",
       "files": {
         ".gitattributes": {
@@ -1951,7 +1939,7 @@
       },
       "github_commit_tree_verified": true,
       "id": "experiments",
-      "path": ".",
+      "path": "warp-experiments",
       "repository": "wrp-wrp/warp-experiments"
     },
     {
@@ -9056,7 +9044,7 @@
       },
       "github_commit_tree_verified": true,
       "id": "lance",
-      "path": "third_party/lance",
+      "path": "lance-s3-io-optimization",
       "repository": "wrp-wrp/lance-s3-io-optimization"
     },
     {
@@ -10046,7 +10034,7 @@
       },
       "github_commit_tree_verified": true,
       "id": "planner",
-      "path": "third_party/warp-planner",
+      "path": "warp-planner",
       "repository": "wrp-wrp/warp-planner"
     }
   ]

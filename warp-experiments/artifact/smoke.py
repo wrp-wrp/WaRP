@@ -47,7 +47,7 @@ def _py_compile_targets() -> list[str]:
 
 
 def _base_commands() -> list[dict]:
-    commands = [
+    return [
         {
             "id": "py_compile",
             "cmd": [sys.executable, "-m", "py_compile", *_py_compile_targets()],
@@ -108,14 +108,6 @@ def _base_commands() -> list[dict]:
             ],
         },
     ]
-
-
-    if (ROOT / "SOURCE_MANIFEST.json").is_file():
-        commands.insert(0, {
-            "id": "bundled_source_integrity",
-            "cmd": [sys.executable, "-m", "artifact.checks.source_integrity"],
-        })
-    return commands
 
 
 def _per_spec_check_commands() -> list[dict]:

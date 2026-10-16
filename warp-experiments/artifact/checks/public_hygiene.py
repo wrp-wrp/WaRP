@@ -37,8 +37,7 @@ HARDCODED_BUCKET_DEFAULT = re.compile(
 PRIVATE_CLOUD_IDENTITY = re.compile(
     r"(?:\bi-[0-9a-f]{8,17}\b|\bip-[0-9-]+\.[A-Za-z0-9.-]*compute\.internal\b)"
 )
-PRIVATE_REPOSITORY_URL = re.compile(r"github[.]com/wrp-wrp/([A-Za-z0-9_.-]+)")
-PUBLIC_REPOSITORIES = {"WaRP-VLDB2027", "WaRP-VLDB2027.git"}
+PRIVATE_REPOSITORY_URL = re.compile(r"github[.]com/wrp-wrp/")
 EMAIL_ADDRESS = re.compile(
     r"\b[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
 )
@@ -65,10 +64,7 @@ OPAQUE_STAGE_ID = re.compile(
     r"(?<![A-Za-z0-9])(?:S|D)\d{2,3}(?![A-Za-z0-9])",
     re.IGNORECASE,
 )
-PHYSICAL_OBJECT_NAME = re.compile(
-    r"\b(?:s\d{2,3}_[a-z0-9_]+|"
-    r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12})\.lance\b"
-)
+PHYSICAL_OBJECT_NAME = re.compile(r"\bs\d{2,3}_[a-z0-9_]+\.lance\b")
 NOQA_CLAUSE = re.compile(
     r"#\s*noqa:\s*[A-Z]{1,4}\d{3}(?:\s*,\s*[A-Z]{1,4}\d{3})*"
 )
@@ -337,8 +333,7 @@ def _privacy_violations(text: str) -> list[str]:
             errors.append("hard-coded bucket default")
     if PRIVATE_CLOUD_IDENTITY.search(text):
         errors.append("private cloud host or instance identity")
-    if any(match.group(1) not in PUBLIC_REPOSITORIES
-           for match in PRIVATE_REPOSITORY_URL.finditer(text)):
+    if PRIVATE_REPOSITORY_URL.search(text):
         errors.append("private GitHub repository URL")
     if any(match.group(0) != PUBLIC_GIT_EMAIL for match in EMAIL_ADDRESS.finditer(text)):
         errors.append("email address")
@@ -349,17 +344,8 @@ def _privacy_violations(text: str) -> list[str]:
 
 def violations() -> list[str]:
     errors: list[str] = []
-    consolidated = (ROOT / "SOURCE_MANIFEST.json").is_file()
-    if consolidated:
-        from .source_integrity import verify
-        errors.extend(verify(ROOT))
     for path in tracked_files():
         relative = path.relative_to(ROOT).as_posix()
-        if consolidated and relative.startswith("third_party/"):
-            # Complete upstream snapshots are checked byte-for-byte above.
-            # Public contacts and upstream test fixtures are outside the
-            # first-party anonymity and private-workflow heuristics.
-            continue
         if path.name.upper() in FORBIDDEN_DOCUMENT_NAMES:
             errors.append(f"{relative}: internal workflow document is tracked")
         if (

@@ -64,12 +64,6 @@ def _pixel_diff(left: Path, right: Path) -> tuple[float, str]:
         raise SystemExit("Pillow required: `pip install pillow`")
     l_img = Image.open(left).convert("RGB")
     r_img = Image.open(right).convert("RGB")
-    left_aspect = l_img.width / l_img.height
-    right_aspect = r_img.width / r_img.height
-    if abs(right_aspect / left_aspect - 1.0) > 0.02:
-        return float("inf"), (
-            f"{l_img.width}x{l_img.height} vs {r_img.width}x{r_img.height} (aspect mismatch)"
-        )
     if r_img.size != l_img.size:
         r_img = r_img.resize(l_img.size, Image.LANCZOS)
     # Sum of absolute per-channel differences across all pixels,
@@ -127,10 +121,7 @@ def main() -> int:
                     right = _rasterise(regenerated, tmp_dir, args.dpi)
                     pct, dim = _pixel_diff(left, right)
                     status = "!" if pct > args.threshold else " "
-                    if pct == float("inf"):
-                        print(f"{spec.id:<45}layout mismatch: {dim}")
-                    else:
-                        print(f"{spec.id:<45}{dim:<18}{dim:<18}{pct:>8.3f}% {status}")
+                    print(f"{spec.id:<45}{dim:<18}{dim:<18}{pct:>8.3f}% {status}")
                     if pct > args.threshold:
                         failed.append(f"{spec.id}:{rel}")
                 else:

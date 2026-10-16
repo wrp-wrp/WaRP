@@ -160,7 +160,7 @@ def render_metric(data: dict, *, metric_key: str, out_name: str, y_label: str,
     ds_list = datasets_override or DATASETS
     n_envs = len(ENV_ORDER)
     n_ds = len(ds_list)
-    fig, axes = plt.subplots(n_envs, n_ds, figsize=(7.00, 1.25 * n_envs))
+    fig, axes = plt.subplots(n_envs, n_ds, figsize=(7.00, 0.85 * n_envs))
 
     per_panel = []
     row_values: dict[int, list[float]] = {i: [] for i in range(n_envs)}
@@ -293,7 +293,7 @@ def render_metric(data: dict, *, metric_key: str, out_name: str, y_label: str,
         labelspacing=0.2,
         fontsize=6.0,
     )
-    fig.subplots_adjust(left=0.105, right=0.995, top=0.92, bottom=0.13, wspace=0.25, hspace=0.40)
+    fig.subplots_adjust(left=0.105, right=0.995, top=0.83, bottom=0.13, wspace=0.25, hspace=0.45)
 
     # Env-row descriptors as figure-level annotations, placed just outside the
     # per-panel "QPS" y-label so they stay visually close to the panels.

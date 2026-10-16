@@ -1,11 +1,5 @@
 # Reproduction guide
 
-This consolidated release includes the exact paper Lance source at
-`third_party/lance`; it is discovered automatically. The standalone library
-is included at `third_party/warp-planner`. Separate companion checkouts and
-anonymous mirrors are unnecessary for these workflows. The original source
-fingerprint gate remains active for the bundled Lance source.
-
 This document covers the commands and evidence boundaries that are not already
 obvious from the root `README.md`. Paper-artifact ownership is generated separately in
 [`PAPER_ARTIFACTS_MAP.md`](PAPER_ARTIFACTS_MAP.md).

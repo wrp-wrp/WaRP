@@ -1,104 +1,20 @@
-__pycache__/
-*.pyc
 .DS_Store
+__pycache__/
+*.py[cod]
 .venv/
-.vecio-run.env
-# Local runtime configuration and credential material must never be committed.
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+target/
+*.egg-info/
+_regen/
+_latest/
+data/latest/
 .env
+.env.*
 *.env
 *.pem
 *.key
 credentials
-results/
-# The paper release includes both source components in Git.
-third_party/**/target/
-third_party/**/.pytest_cache/
-third_party/**/*.egg-info/
-experiments/**/_latest/
-# Runtime dataset cache; python3 -m artifact prepare-dataset creates it on demand.
-# Paper evidence is stored separately under experiments/*/data/paper/.
-/data/
-
-# Local protocol drafts and one-off analysis helpers are not release artifacts.
-# The public repository keeps only the runner, frozen evidence, and renderer
-# needed to reproduce a paper figure or table.
-experiments/**/PROTOCOL*.md
-experiments/**/AUDIT*.md
-experiments/**/audit_*.py
-experiments/**/fit_*_from_*.py
-experiments/**/scripts/
-
-# Render artefacts we do not ship: PNG thumbnails produced alongside every
-# PDF by matplotlib. The committed PDF/TEX outputs under the numbered
-# experiments/figure-NN-name/ or experiments/table-NN-name/ owners
-# are the ones cited by the paper via \includegraphics.
-experiments/**/*.png
-experiments/**/*.svg
-experiments/**/*.provenance.json
-experiments/**/*.normalized.csv
-archive/**/*.png
-archive/**/*.svg
-
-# Regenerated artifacts (produced by rebuild_paper_artifacts.py --target regen).
-# The authoritative paper PDF/TEX files live in numbered owners; _regen/ is
-# just a scratch area for comparing against the paper snapshot.
-experiments/**/_regen/
-archive/**/_regen/
-
-# data/latest is the runner output slot (full-mode re-runs land here).
-# data/paper is the committed authoritative snapshot (read-only).
-experiments/**/data/latest/
-
-# Keep only the checksummed paper snapshot in Git. Raw campaign pulls,
-# intermediate analysis directories, and local rerun bundles stay on the
-# experiment host and must not make the repository dirty.
-experiments/**/data/*
-!experiments/**/data/paper/
-!experiments/**/data/paper/**
-
-# Only paper-cited PDFs ship in numbered experiment owners. Extra variants
-# (palette swaps, p95-only, cluster-only, etc.) are regenerated on demand.
-experiments/**/*.pdf
-experiments/**/*.tex
-!experiments/figure-01-s3-range-get-latency/latency_composition.pdf
-!experiments/table-01-cluster-coarsening/intro_cluster_coarsening_sanity_check.tex
-!experiments/figure-04-object-store-io/request_fanout.pdf
-!experiments/figure-04-object-store-io/surrogate_runtime_semantics.pdf
-!experiments/figure-09-qps-cost/figure_qps_vs_savings_q4_io64_all6_grid_qps_p95_3x4.pdf
-!experiments/figure-10-p-sweep-closedloop/figure_closed_loop_env3_reorder_only_combined.pdf
-!experiments/figure-11-greedy-locality-shift/figure_greedy_policy_transfer.pdf
-!experiments/figure-12-planner-overhead/figure_03_real_data_planner_overhead_piecewise.pdf
-!experiments/figure-12-planner-overhead/table_03_real_data_planner_overhead_piecewise.tex
-!experiments/figure-13-reordering-methods/figure_reorder_panels.pdf
-!experiments/figure-14-sift1m-sensitivity/figure_sift1m_real_s3_sensitivity_combined.pdf
-!experiments/figure-07-real-lance-metrics/figure_real_lance_metrics.pdf
-!experiments/figure-07-real-lance-metrics/table_payload_accounting.tex
-!experiments/figure-08-sift100m-concurrency-scaling/figure_real_lance_concurrency_scaling.pdf
-!experiments/figure-05-planning-frontier/figure_planning_bw_frontier.pdf
-
-# LaTeX build artifacts (we copy figures; the paper builds elsewhere)
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.synctex.gz
-
-# Backup files of any kind (post_parse_premerge.sh writes one variant;
-# we don't ship them and they break verify_output_schemas.py).
-*.bak
-*.bak_*
-*.orig
-
-# Local verification outputs and wheel builds.
-dist/
-build/
-*.whl
-
-# Historical Real-Lance sweep raw output is not consumed by the current
-# Figure 7 renderer. Current frozen inputs live under data/paper/.
-experiments/figure-07-real-lance-metrics/data/raw_*/
-experiments/figure-07-real-lance-metrics/runs/
-
-# Versioned parsed JSON snapshots from the retired renderer.
-experiments/figure-07-real-lance-metrics/data/paper/brkK128_parsed_v*.json
+credentials.json
+/dist/
