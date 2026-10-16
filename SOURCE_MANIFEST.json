@@ -1,10 +1,173 @@
 {
-  "description": "Three submitted source snapshots stored as sibling projects. All component file contents and Git file modes match the recorded commits. Only the outer delivery documents and metadata are new.",
-  "manifest_version": 1,
+  "description": "Submitted projects stored as planner/, evaluation/, and lance/. The files map retains original SHA-256 hashes, sizes, and Git modes. Only the Markdown documentation listed in documentation_updates has changed; code, configurations, and frozen measurements retain their submitted contents.",
+  "manifest_version": 2,
   "sources": [
     {
-      "adapted_files": [],
+      "adapted_files": [
+        "README.md",
+        "docs/REPRODUCTION_GUIDE.md",
+        "experiments/figure-01-s3-range-get-latency/README.md",
+        "experiments/figure-04-object-store-io/README.md",
+        "experiments/figure-04-object-store-io/stages/real-s3-tiny-request-fanout-sanity/README.md",
+        "experiments/figure-04-object-store-io/stages/s3-piecewise-calibration-curves/README.md",
+        "experiments/figure-05-planning-frontier/README.md",
+        "experiments/figure-07-real-lance-metrics/README.md",
+        "experiments/figure-08-sift100m-concurrency-scaling/README.md",
+        "experiments/figure-09-qps-cost/README.md",
+        "experiments/figure-10-p-sweep-closedloop/README.md",
+        "experiments/figure-11-greedy-locality-shift/README.md",
+        "experiments/figure-12-planner-overhead/README.md",
+        "experiments/figure-13-reordering-methods/README.md",
+        "experiments/figure-13-reordering-methods/stages/locality-aware-coaccess-gap/README.md",
+        "experiments/figure-13-reordering-methods/stages/reorder-cost/README.md",
+        "experiments/figure-14-sift1m-sensitivity/README.md",
+        "experiments/table-01-cluster-coarsening/README.md",
+        "runners/figure-01-s3-range-get-latency/README.md",
+        "runners/figure-04-object-store-io/README.md",
+        "runners/figure-07-real-lance-metrics/README.md",
+        "runners/figure-08-sift100m-concurrency-scaling/README.md",
+        "runners/figure-09-qps-cost/README.md",
+        "runners/figure-10-p-sweep-closedloop/README.md",
+        "runners/figure-11-greedy-locality-shift/README.md",
+        "runners/figure-12-planner-overhead/README.md",
+        "runners/figure-13-reordering-methods/README.md",
+        "runners/figure-14-sift1m-sensitivity/README.md",
+        "runners/locality-aware-coaccess-gap/README.md",
+        "runners/reorder-cost/README.md",
+        "runners/s3-piecewise-calibration-curves/README.md",
+        "runners/table-01-cluster-coarsening/README.md"
+      ],
       "commit": "23b54eea35c60605e690ae3d2f63142545d60400",
+      "documentation_updates": {
+        "README.md": {
+          "sha256": "4d7b50f5e3b00e83fd7ed77ef113c97ad90694df9f5a88451676ee210c43b058",
+          "size": 4248
+        },
+        "docs/REPRODUCTION_GUIDE.md": {
+          "sha256": "926ab71cf7d127448d1f804acdd44ffb6ad3fd76f147e7839f4b1901a0c2f563",
+          "size": 13011
+        },
+        "experiments/figure-01-s3-range-get-latency/README.md": {
+          "sha256": "3f4950a3246bfb99a98b66124e4346352caacb8574f20f69168b9d4cf6377636",
+          "size": 963
+        },
+        "experiments/figure-04-object-store-io/README.md": {
+          "sha256": "811ca6d338133066a4ba2cfd58d798b822428e7498a2a95a94cbc931779d0859",
+          "size": 987
+        },
+        "experiments/figure-04-object-store-io/stages/real-s3-tiny-request-fanout-sanity/README.md": {
+          "sha256": "2ab194d2c55791dc513a5a670c9a65f035593127cbe820d29af09b772deec49c",
+          "size": 897
+        },
+        "experiments/figure-04-object-store-io/stages/s3-piecewise-calibration-curves/README.md": {
+          "sha256": "8ea1cbd60e7e1c323af8acda0ee27a3c84c59f592cb961d3aead186c0d8763d3",
+          "size": 875
+        },
+        "experiments/figure-05-planning-frontier/README.md": {
+          "sha256": "75f9cf41aeed5c506f84cf9f0314055b59dd84a78a8c5e3fddcfb19a24f68364",
+          "size": 681
+        },
+        "experiments/figure-07-real-lance-metrics/README.md": {
+          "sha256": "ae02aea1be60269d5508d3156bd89e360b7c3b7511f13d8f4a1d7464cae07ff5",
+          "size": 1892
+        },
+        "experiments/figure-08-sift100m-concurrency-scaling/README.md": {
+          "sha256": "11ac34aee1d6c3b7e9468b69477443643535704270f85334a6c44c0748018926",
+          "size": 2101
+        },
+        "experiments/figure-09-qps-cost/README.md": {
+          "sha256": "d89841212c6a94aa04355af249a93f37800e43e6831e0d1d4304941654d8f55e",
+          "size": 1035
+        },
+        "experiments/figure-10-p-sweep-closedloop/README.md": {
+          "sha256": "925cb16be477d03d33c47731d19717c3144c0fdc33180cfc0141124184513093",
+          "size": 1072
+        },
+        "experiments/figure-11-greedy-locality-shift/README.md": {
+          "sha256": "506881a422f12fa688f63a7947bab6049a045d5c624f195b01f50ca492a31b7d",
+          "size": 1242
+        },
+        "experiments/figure-12-planner-overhead/README.md": {
+          "sha256": "942545d90541ae3e0b1e01df579aac8ca4c112f7897e4a6dfb725b0d0678e3fd",
+          "size": 1138
+        },
+        "experiments/figure-13-reordering-methods/README.md": {
+          "sha256": "8678baac442cc7a785939affd2d5a213671bbb0454802a8e3722a7f4ed68d82d",
+          "size": 1417
+        },
+        "experiments/figure-13-reordering-methods/stages/locality-aware-coaccess-gap/README.md": {
+          "sha256": "736e6d57d992ecb9340a37e57a3021497a5669a04083d881bacd4c00eade1cf9",
+          "size": 925
+        },
+        "experiments/figure-13-reordering-methods/stages/reorder-cost/README.md": {
+          "sha256": "47a8e099f7f0dc8a3d09904d1bee149b7bf344c9b514f81c8751e497c5de8f36",
+          "size": 906
+        },
+        "experiments/figure-14-sift1m-sensitivity/README.md": {
+          "sha256": "f0870f9cf242d68c8f3d68b2c6163d045237647452027a7bb5f2eb3e707d457f",
+          "size": 1061
+        },
+        "experiments/table-01-cluster-coarsening/README.md": {
+          "sha256": "9191e08fd20e4e6d4bee802bcf6b31cb7276de1071c6ddd292385eec9de8441e",
+          "size": 1050
+        },
+        "runners/figure-01-s3-range-get-latency/README.md": {
+          "sha256": "f114ba310db87d9e52ba19585a8df357e02cd168dd11ad1fc5568b7b6e8411fc",
+          "size": 493
+        },
+        "runners/figure-04-object-store-io/README.md": {
+          "sha256": "d121ef84e100fd6c3812e61bb04ee6b1830e3a0ffa29c107edd20982a2fb814e",
+          "size": 904
+        },
+        "runners/figure-07-real-lance-metrics/README.md": {
+          "sha256": "3430c739c9f6d8a41aab99eb8357dbd76972668f3ee6cdd5ed526a876cf378fa",
+          "size": 2110
+        },
+        "runners/figure-08-sift100m-concurrency-scaling/README.md": {
+          "sha256": "ccd27b9343973e2681dfcedbf36e0b9e188629f1ad2ccfc78ec916cf95ebeb7d",
+          "size": 2044
+        },
+        "runners/figure-09-qps-cost/README.md": {
+          "sha256": "9a3f0f9fa664ff528d2d276fb8fe3ab9b3d591a994f8ece2d0feda6f1ca8547b",
+          "size": 808
+        },
+        "runners/figure-10-p-sweep-closedloop/README.md": {
+          "sha256": "50d650da4f0560e082bebf011957af14f95c4348a30937e1a603144f317442cc",
+          "size": 994
+        },
+        "runners/figure-11-greedy-locality-shift/README.md": {
+          "sha256": "b6f4bc7a5c4e8fba9c6d5b5e126bd1fbdd2265940fca99ac15cf6170ece365b6",
+          "size": 2669
+        },
+        "runners/figure-12-planner-overhead/README.md": {
+          "sha256": "d3056c507eecdb0c11c1765897df0d6898a17a25cc547a37414d0d5b1171558a",
+          "size": 854
+        },
+        "runners/figure-13-reordering-methods/README.md": {
+          "sha256": "fe7514685c4873213f26d95d5bece9f2863c9842968c7add75cb994490cd4b80",
+          "size": 443
+        },
+        "runners/figure-14-sift1m-sensitivity/README.md": {
+          "sha256": "70b79bddf7e4b4b2daa5721f9910e5b7514a79342487cbc147070c691f38f981",
+          "size": 999
+        },
+        "runners/locality-aware-coaccess-gap/README.md": {
+          "sha256": "199322f78d3cde11857c45816b433125e92f792b83a3e8ad9bf0b68e95354e24",
+          "size": 525
+        },
+        "runners/reorder-cost/README.md": {
+          "sha256": "5a65f2e42a5de7a622be608b97c0450436ccf17b26a8eb3155168ea6894d19d3",
+          "size": 661
+        },
+        "runners/s3-piecewise-calibration-curves/README.md": {
+          "sha256": "f14113e2c9149d33a36abdb5c469116f4c525b507c0a315d3d18efbe3b078ce8",
+          "size": 1082
+        },
+        "runners/table-01-cluster-coarsening/README.md": {
+          "sha256": "e43efc89a89fe1c13715e0fe3f3cf044ea85d84ec4f12e7cc411190d5281aac9",
+          "size": 2250
+        }
+      },
       "files": {
         ".gitattributes": {
           "mode": "100644",
@@ -1939,12 +2102,30 @@
       },
       "github_commit_tree_verified": true,
       "id": "experiments",
-      "path": "warp-experiments",
+      "path": "evaluation",
       "repository": "wrp-wrp/warp-experiments"
     },
     {
-      "adapted_files": [],
+      "adapted_files": [
+        "ARTIFACT.md",
+        "PAPER_REPRODUCTION_GUIDE.md",
+        "README.md"
+      ],
       "commit": "c768d004506231f4f5d81f61b9cbc55ccfc904f3",
+      "documentation_updates": {
+        "ARTIFACT.md": {
+          "sha256": "d7b98211fafba653d83bc1b171d3a4301c762c7ea76be8aa1e31dbdeb1c43422",
+          "size": 2478
+        },
+        "PAPER_REPRODUCTION_GUIDE.md": {
+          "sha256": "2c1c3e530950cc1bc7ed0360f55448961598433498c8a41a939c6a7953d22353",
+          "size": 2641
+        },
+        "README.md": {
+          "sha256": "dbc56cbb459b5bd3e1ffab2cd1fb7b030a40d2f068327968f8cf2e6046271cd3",
+          "size": 1860
+        }
+      },
       "files": {
         ".bumpversion.toml": {
           "mode": "100644",
@@ -9044,12 +9225,40 @@
       },
       "github_commit_tree_verified": true,
       "id": "lance",
-      "path": "lance-s3-io-optimization",
+      "path": "lance",
       "repository": "wrp-wrp/lance-s3-io-optimization"
     },
     {
-      "adapted_files": [],
+      "adapted_files": [
+        "CONTRIBUTING.md",
+        "README.md",
+        "python/README.md",
+        "python/examples/README.md",
+        "rust/examples/README.md"
+      ],
       "commit": "6e8c3fe04ff8e9b4ce4eb477e965d6ed315e41c3",
+      "documentation_updates": {
+        "CONTRIBUTING.md": {
+          "sha256": "7877008654f404576067e23a86333d6fdafcf8e4f87d4d36e4d893b98ae00a10",
+          "size": 2700
+        },
+        "README.md": {
+          "sha256": "50daa56a88d85d903bbee6048ce0163ceaaf8ed641b51251941ad3f6e4bc4caf",
+          "size": 4432
+        },
+        "python/README.md": {
+          "sha256": "9f70b74a4ef47c65debd726b43090e36d1c7c25572bc08e5f2bd4027bca7b725",
+          "size": 3172
+        },
+        "python/examples/README.md": {
+          "sha256": "b2df06bf9777ce7add556c3009b49611a8d83d97b9605cb2f7be7b0da4a99acb",
+          "size": 1037
+        },
+        "rust/examples/README.md": {
+          "sha256": "d333b18bc3c55bfc2f260ff1c958b921e90aa4e79c15d0cf9bdbce1457e30a3d",
+          "size": 1457
+        }
+      },
       "files": {
         ".gitignore": {
           "mode": "100644",
@@ -10034,7 +10243,7 @@
       },
       "github_commit_tree_verified": true,
       "id": "planner",
-      "path": "warp-planner",
+      "path": "planner",
       "repository": "wrp-wrp/warp-planner"
     }
   ]
