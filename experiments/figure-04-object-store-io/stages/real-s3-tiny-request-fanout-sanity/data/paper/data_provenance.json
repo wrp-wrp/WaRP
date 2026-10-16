@@ -1,0 +1,40 @@
+{
+  "figure": "fig04_real_s3_tiny_request_fanout_sanity",
+  "status": "frozen_inputs_checked_in",
+  "canonical_inputs": {
+    "summary_csv": "summary.csv",
+    "serial_single_per_iop_csv": "fanout_001_per_iop.csv"
+  },
+  "upstream_generation": {
+    "query_pool_script": "runners/real-s3-tiny-request-fanout-sanity/generate_lance_fixed_prefix_query_pool.py",
+    "fanout_runner_script": "runners/real-s3-tiny-request-fanout-sanity/run_lance_1kb_fanout.py"
+  },
+  "upstream_runtime_backend": {
+    "kind": "modified_lance_binary",
+    "main_binary_name": "lance_scheduler_qps_s3",
+    "per_iop_binary_name": "lance_scheduler_qps_s3_per_iop"
+  },
+  "experiment_parameters": {
+    "uri": "s3://your-s3-bucket-name/pipeline/sift1m/20260308_034642/clusters_merged.bin",
+    "file_size_bytes": 512000000,
+    "nlist": 4096,
+    "cluster_bytes": 1024,
+    "max_fanout": 128,
+    "pool_size": 128,
+    "query_concurrency": 1,
+    "full_run_num_queries": 512,
+    "full_run_warmup_queries": 64,
+    "querypool_q128_num_queries": 128,
+    "querypool_q128_warmup_queries": 16,
+    "single_per_iop_num_queries": 8192,
+    "single_per_iop_warmup_queries": 128,
+    "seed": 42
+  },
+  "frozen_input_sources": {
+    "summary_csv_source": "results/lance_1kb_clean_full_q512_iothr128_20260312/summary.csv",
+    "serial_single_per_iop_csv_source": "results/lance_1kb_clean_single_q8192_per_iop_20260312_run/fanout_001_per_iop.csv",
+    "querypool_q512_metadata_source": "results/lance_1kb_clean_querypool_q512_20260312/README.txt",
+    "querypool_q128_metadata_source": "results/lance_1kb_clean_querypool_q128_20260312/README.txt",
+    "single_per_iop_metadata_source": "results/lance_1kb_clean_single_q8192_per_iop_20260312_run/README.txt"
+  }
+}

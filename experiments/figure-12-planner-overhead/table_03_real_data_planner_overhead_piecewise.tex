@@ -1,0 +1,41 @@
+\begin{table}[t]
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{0pt}
+\caption{\textbf{Planner Overhead Endpoints.} All entries report per-query p95 time in milliseconds on real probe lists. ``Full optimization'' denotes the final planner with adaptive $B$ search and the large-$K$ WQS engineering fast path (enabled for $K \ge 32$). Approximation errors are measured against the exact D\&C exhaustive-$B$ baseline when that baseline completes. For $nprobe{=}512$, Plain DP exceeds the 120\,s timeout in every setting, so the reported speedups are lower bounds.}
+\label{tab:eval-planner-overhead}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.0pt}
+\renewcommand{\arraystretch}{1.00}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}llrcccc@{}}
+\toprule
+Dataset & $nprobe$ & $K$ & \shortstack{Plain DP\\p95 ms} & \shortstack{Full Opt.\\p95 ms} & \shortstack{Speedup\\vs. Plain} & \shortstack{Error (\%)\\avg./max} \\
+\midrule
+  \multirow{9}{*}{SIFT1M} & \multirow{3}{*}{128} & 32 & 24.61 & 0.87 & 28.2$\times$ & 0.77 / 3.22 \\
+   &  & 64 & 10.02 & 0.54 & 18.5$\times$ & 0.55 / 2.86 \\
+   &  & 128 & 32.30 & 0.50 & 64.4$\times$ & 0.59 / 1.75 \\
+\addlinespace[1.1pt]
+   & \multirow{3}{*}{256} & 64 & 441.6 & 1.90 & 232$\times$ & 1.09 / 2.79 \\
+   &  & 128 & 837.9 & 1.72 & 486$\times$ & 0.48 / 1.75 \\
+   &  & 256 & 1368 & 2.17 & 630$\times$ & 0.38 / 1.22 \\
+\addlinespace[1.1pt]
+   & \multirow{3}{*}{512} & 128 & $>$120s & 4.72 & >25450$\times$ & -- \\
+   &  & 256 & $>$120s & 7.17 & >16733$\times$ & -- \\
+   &  & 512 & $>$120s & 9.90 & >12123$\times$ & -- \\
+\midrule
+  \multirow{9}{*}{GloVe} & \multirow{3}{*}{128} & 32 & 45.29 & 1.68 & 27.0$\times$ & 0.82 / 3.48 \\
+   &  & 64 & 9.66 & 0.52 & 18.4$\times$ & 0.35 / 2.63 \\
+   &  & 128 & 68.72 & 0.76 & 90.3$\times$ & 0.60 / 1.62 \\
+\addlinespace[1.1pt]
+   & \multirow{3}{*}{256} & 64 & 438.3 & 1.92 & 229$\times$ & 1.13 / 3.35 \\
+   &  & 128 & 942.6 & 1.72 & 549$\times$ & 0.42 / 1.42 \\
+   &  & 256 & 1560 & 2.18 & 715$\times$ & 0.28 / 1.09 \\
+\addlinespace[1.1pt]
+   & \multirow{3}{*}{512} & 128 & $>$120s & 4.77 & >25142$\times$ & -- \\
+   &  & 256 & $>$120s & 7.19 & >16697$\times$ & -- \\
+   &  & 512 & $>$120s & 9.91 & >12103$\times$ & -- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,110 @@
+{
+  "version": "v1",
+  "benchmark_name": "planner_overhead_real_piecewise",
+  "rows": [
+    {
+      "dataset": "GLOVE",
+      "nprobe": 128,
+      "K": 16,
+      "queries": 120,
+      "exact_med_ms": 9.0606075,
+      "exact_p95_ms": 13.042550249999998,
+      "fast_med_ms": 0.516062,
+      "fast_p95_ms": 0.71401465,
+      "speedup_p95": 18.266502304959708,
+      "err_avg_pct": 0.625113205960139,
+      "err_max_pct": 3.0695177245410057
+    },
+    {
+      "dataset": "GLOVE",
+      "nprobe": 128,
+      "K": 32,
+      "queries": 120,
+      "exact_med_ms": 9.2138095,
+      "exact_p95_ms": 14.306657899999998,
+      "fast_med_ms": 0.8578665000000001,
+      "fast_p95_ms": 1.15837375,
+      "speedup_p95": 12.350640628726262,
+      "err_avg_pct": 0.824677220768502,
+      "err_max_pct": 3.477813063455394
+    },
+    {
+      "dataset": "GLOVE",
+      "nprobe": 128,
+      "K": 64,
+      "queries": 120,
+      "exact_med_ms": 3.1778085000000003,
+      "exact_p95_ms": 5.9299800000000005,
+      "fast_med_ms": 0.8804655000000001,
+      "fast_p95_ms": 0.9697272499999999,
+      "speedup_p95": 6.115100921418884,
+      "err_avg_pct": 0.34846436170404194,
+      "err_max_pct": 2.6281421436311425
+    },
+    {
+      "dataset": "GLOVE",
+      "nprobe": 128,
+      "K": 128,
+      "queries": 120,
+      "exact_med_ms": 17.4521655,
+      "exact_p95_ms": 23.7578659,
+      "fast_med_ms": 1.042075,
+      "fast_p95_ms": 1.67008245,
+      "speedup_p95": 14.225564671971734,
+      "err_avg_pct": 0.6043839843844413,
+      "err_max_pct": 1.6181087052224394
+    },
+    {
+      "dataset": "SIFT1M",
+      "nprobe": 128,
+      "K": 16,
+      "queries": 120,
+      "exact_med_ms": 9.918390500000001,
+      "exact_p95_ms": 13.8586374,
+      "fast_med_ms": 0.5533105,
+      "fast_p95_ms": 0.7522992,
+      "speedup_p95": 18.421709607028692,
+      "err_avg_pct": 0.6619689293183308,
+      "err_max_pct": 3.251883677444783
+    },
+    {
+      "dataset": "SIFT1M",
+      "nprobe": 128,
+      "K": 32,
+      "queries": 120,
+      "exact_med_ms": 10.831065500000001,
+      "exact_p95_ms": 15.29270545,
+      "fast_med_ms": 0.87463,
+      "fast_p95_ms": 1.1580662,
+      "speedup_p95": 13.205381048164604,
+      "err_avg_pct": 0.7659189902427662,
+      "err_max_pct": 3.222968035981271
+    },
+    {
+      "dataset": "SIFT1M",
+      "nprobe": 128,
+      "K": 64,
+      "queries": 120,
+      "exact_med_ms": 3.659637,
+      "exact_p95_ms": 5.915506949999999,
+      "fast_med_ms": 0.9008475,
+      "fast_p95_ms": 0.93646605,
+      "speedup_p95": 6.316840797378612,
+      "err_avg_pct": 0.5485237615284165,
+      "err_max_pct": 2.8618562709724458
+    },
+    {
+      "dataset": "SIFT1M",
+      "nprobe": 128,
+      "K": 128,
+      "queries": 120,
+      "exact_med_ms": 13.866485,
+      "exact_p95_ms": 19.58352145,
+      "fast_med_ms": 1.0352495,
+      "fast_p95_ms": 1.4833542,
+      "speedup_p95": 13.202188290564722,
+      "err_avg_pct": 0.5870482610043769,
+      "err_max_pct": 1.752354407459218
+    }
+  ]
+}

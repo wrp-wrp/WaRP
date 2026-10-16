@@ -1,0 +1,17 @@
+\begin{table}[!tbp]
+\caption{\textbf{Recall-Matched Comparison of Fine vs.\ Coarse Clustering on SIFT1M.} Coarser clustering reduces requests but enlarges the candidate set, raising per-query compute.}
+\label{tab:intro-coarse-cluster}
+\centering
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Setting & Lists & Probes & Recall@10 & Req./q & Cand./q \\
+\midrule
+Fine clustering & 4096 & 192 & 0.9973 & 192 & 57.4K \\
+Coarse clustering & 1024 & 80 & 0.9970 & 80 & 85.0K \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

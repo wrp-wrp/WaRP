@@ -1,0 +1,260 @@
+{
+  "schema_version": 2,
+  "dataset": "sift1m",
+  "n": 1000000,
+  "d": 128,
+  "index_type": "faiss.IndexIVFFlat",
+  "metric": "L2",
+  "train_size": 200000,
+  "clustering": {
+    "seed": 42,
+    "iterations": 10,
+    "restarts": 1,
+    "max_points_per_centroid": 256,
+    "min_points_per_centroid": 39,
+    "faiss_threads": 16
+  },
+  "nlist": 4096,
+  "nprobe": 128,
+  "reorder": "none",
+  "num_queries": 32,
+  "cluster_bytes": 512,
+  "total_blob_bytes": 512000000,
+  "seed": 42,
+  "toolchain": {
+    "faiss": "1.14.3",
+    "numpy": "2.4.6"
+  },
+  "queries": [
+    {
+      "file": "query_0000.json",
+      "query_id": 0,
+      "cluster_count": 128,
+      "first_offset": 1588224,
+      "last_end": 503206912
+    },
+    {
+      "file": "query_0001.json",
+      "query_id": 1,
+      "cluster_count": 128,
+      "first_offset": 1588224,
+      "last_end": 506032640
+    },
+    {
+      "file": "query_0002.json",
+      "query_id": 2,
+      "cluster_count": 128,
+      "first_offset": 9525248,
+      "last_end": 509775360
+    },
+    {
+      "file": "query_0003.json",
+      "query_id": 3,
+      "cluster_count": 128,
+      "first_offset": 6482432,
+      "last_end": 509359104
+    },
+    {
+      "file": "query_0004.json",
+      "query_id": 4,
+      "cluster_count": 128,
+      "first_offset": 7384064,
+      "last_end": 507801088
+    },
+    {
+      "file": "query_0005.json",
+      "query_id": 5,
+      "cluster_count": 128,
+      "first_offset": 10488320,
+      "last_end": 497499648
+    },
+    {
+      "file": "query_0006.json",
+      "query_id": 6,
+      "cluster_count": 128,
+      "first_offset": 2033152,
+      "last_end": 510927360
+    },
+    {
+      "file": "query_0007.json",
+      "query_id": 7,
+      "cluster_count": 128,
+      "first_offset": 1155584,
+      "last_end": 508199936
+    },
+    {
+      "file": "query_0008.json",
+      "query_id": 8,
+      "cluster_count": 128,
+      "first_offset": 7483904,
+      "last_end": 507105280
+    },
+    {
+      "file": "query_0009.json",
+      "query_id": 9,
+      "cluster_count": 128,
+      "first_offset": 4811264,
+      "last_end": 498758144
+    },
+    {
+      "file": "query_0010.json",
+      "query_id": 10,
+      "cluster_count": 128,
+      "first_offset": 5228032,
+      "last_end": 511074304
+    },
+    {
+      "file": "query_0011.json",
+      "query_id": 11,
+      "cluster_count": 128,
+      "first_offset": 493056,
+      "last_end": 507048448
+    },
+    {
+      "file": "query_0012.json",
+      "query_id": 12,
+      "cluster_count": 128,
+      "first_offset": 3028992,
+      "last_end": 507966976
+    },
+    {
+      "file": "query_0013.json",
+      "query_id": 13,
+      "cluster_count": 128,
+      "first_offset": 3823104,
+      "last_end": 506032640
+    },
+    {
+      "file": "query_0014.json",
+      "query_id": 14,
+      "cluster_count": 128,
+      "first_offset": 11243008,
+      "last_end": 507316224
+    },
+    {
+      "file": "query_0015.json",
+      "query_id": 15,
+      "cluster_count": 128,
+      "first_offset": 2611712,
+      "last_end": 507801088
+    },
+    {
+      "file": "query_0016.json",
+      "query_id": 16,
+      "cluster_count": 128,
+      "first_offset": 3028992,
+      "last_end": 505734656
+    },
+    {
+      "file": "query_0017.json",
+      "query_id": 17,
+      "cluster_count": 128,
+      "first_offset": 5228032,
+      "last_end": 509359104
+    },
+    {
+      "file": "query_0018.json",
+      "query_id": 18,
+      "cluster_count": 128,
+      "first_offset": 897024,
+      "last_end": 507464704
+    },
+    {
+      "file": "query_0019.json",
+      "query_id": 19,
+      "cluster_count": 128,
+      "first_offset": 1588224,
+      "last_end": 509359104
+    },
+    {
+      "file": "query_0020.json",
+      "query_id": 20,
+      "cluster_count": 128,
+      "first_offset": 1750528,
+      "last_end": 510481920
+    },
+    {
+      "file": "query_0021.json",
+      "query_id": 21,
+      "cluster_count": 128,
+      "first_offset": 493056,
+      "last_end": 502412288
+    },
+    {
+      "file": "query_0022.json",
+      "query_id": 22,
+      "cluster_count": 128,
+      "first_offset": 493056,
+      "last_end": 510833152
+    },
+    {
+      "file": "query_0023.json",
+      "query_id": 23,
+      "cluster_count": 128,
+      "first_offset": 2611712,
+      "last_end": 509775360
+    },
+    {
+      "file": "query_0024.json",
+      "query_id": 24,
+      "cluster_count": 128,
+      "first_offset": 493056,
+      "last_end": 506805760
+    },
+    {
+      "file": "query_0025.json",
+      "query_id": 25,
+      "cluster_count": 128,
+      "first_offset": 6245888,
+      "last_end": 509628416
+    },
+    {
+      "file": "query_0026.json",
+      "query_id": 26,
+      "cluster_count": 128,
+      "first_offset": 27270656,
+      "last_end": 510121472
+    },
+    {
+      "file": "query_0027.json",
+      "query_id": 27,
+      "cluster_count": 128,
+      "first_offset": 6245888,
+      "last_end": 505663488
+    },
+    {
+      "file": "query_0028.json",
+      "query_id": 28,
+      "cluster_count": 128,
+      "first_offset": 19921408,
+      "last_end": 511727616
+    },
+    {
+      "file": "query_0029.json",
+      "query_id": 29,
+      "cluster_count": 128,
+      "first_offset": 1013248,
+      "last_end": 510481920
+    },
+    {
+      "file": "query_0030.json",
+      "query_id": 30,
+      "cluster_count": 128,
+      "first_offset": 897024,
+      "last_end": 508830208
+    },
+    {
+      "file": "query_0031.json",
+      "query_id": 31,
+      "cluster_count": 128,
+      "first_offset": 7384064,
+      "last_end": 500493312
+    }
+  ],
+  "source_arrays": {
+    "base_file": "base.npy",
+    "base_sha256": "4921953796bc066d3a4be1c6b26e32a27b8931080f21afe30824a63e65cb768d",
+    "queries_file": "queries.npy",
+    "queries_sha256": "88e61604b7ad2efee410551fbf6fd800594f4008ac599e2f75fe5a58f569f7b9"
+  }
+}

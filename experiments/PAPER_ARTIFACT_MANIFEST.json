@@ -1,0 +1,219 @@
+{
+  "schema_version": 4,
+  "contract": "Every experiment-backed paper figure or table has exactly one Paper Experiment owner. Related artifacts derived from the same evidence share that owner. Conceptual diagrams and documentation tables have no experiment owner.",
+  "figures": [
+    {
+      "number": "1",
+      "label": "fig:intro-latency-composition",
+      "kind": "experiment",
+      "experiment_id": "figure-01-s3-range-get-latency",
+      "paper_sources": [
+        "experiments/figure-01-s3-range-get-latency/latency_composition.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-01-s3-range-get-latency/latency_composition.pdf"
+      ]
+    },
+    {
+      "number": "2",
+      "label": "fig:intro-plan-example",
+      "kind": "diagram",
+      "experiment_id": null,
+      "paper_sources": ["figures/plan-example.pdf"],
+      "paper_artifacts": []
+    },
+    {
+      "number": "3",
+      "label": "fig:warp-pipeline",
+      "kind": "diagram",
+      "experiment_id": null,
+      "paper_sources": ["figures/pipeline.pdf"],
+      "paper_artifacts": []
+    },
+    {
+      "number": "4",
+      "label": "fig:bg-microbenchmarks",
+      "subfigure_labels": ["fig:bg-calibration", "fig:bg-request-count-tail"],
+      "kind": "experiment",
+      "experiment_id": "figure-04-object-store-io",
+      "paper_sources": [
+        "experiments/figure-04-object-store-io/surrogate_runtime_semantics.pdf",
+        "experiments/figure-04-object-store-io/request_fanout.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-04-object-store-io/surrogate_runtime_semantics.pdf",
+        "experiments/figure-04-object-store-io/request_fanout.pdf"
+      ]
+    },
+    {
+      "number": "5",
+      "label": "fig:planning-frontier",
+      "kind": "experiment",
+      "experiment_id": "figure-05-planning-frontier",
+      "paper_sources": [
+        "figures/planning-frontier/figure_planning_bw_frontier.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-05-planning-frontier/figure_planning_bw_frontier.pdf"
+      ]
+    },
+    {
+      "number": "6",
+      "label": "fig:reorder-schematic",
+      "kind": "diagram",
+      "experiment_id": null,
+      "paper_sources": ["figures/reorder.pdf"],
+      "paper_artifacts": []
+    },
+    {
+      "number": "7",
+      "label": "fig:eval-real-lance-metrics",
+      "kind": "experiment",
+      "experiment_id": "figure-07-real-lance-metrics",
+      "paper_sources": [
+        "experiments/figure-07-real-lance-metrics/figure_real_lance_metrics.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-07-real-lance-metrics/figure_real_lance_metrics.pdf"
+      ]
+    },
+    {
+      "number": "8",
+      "label": "fig:eval-real-lance-concurrency-scaling",
+      "kind": "experiment",
+      "experiment_id": "figure-08-sift100m-concurrency-scaling",
+      "paper_sources": [
+        "experiments/figure-08-sift100m-concurrency-scaling/figure_real_lance_concurrency_scaling.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-08-sift100m-concurrency-scaling/figure_real_lance_concurrency_scaling.pdf"
+      ]
+    },
+    {
+      "number": "9",
+      "label": "fig:eval-qps-cost",
+      "kind": "experiment",
+      "experiment_id": "figure-09-qps-cost",
+      "paper_sources": [
+        "experiments/figure-09-qps-cost/figure_qps_vs_savings_q4_io64_all6_grid_qps_p95_3x4.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-09-qps-cost/figure_qps_vs_savings_q4_io64_all6_grid_qps_p95_3x4.pdf"
+      ]
+    },
+    {
+      "number": "10",
+      "label": "fig:eval-p-sweep-closedloop",
+      "kind": "experiment",
+      "experiment_id": "figure-10-p-sweep-closedloop",
+      "paper_sources": [
+        "experiments/figure-10-p-sweep-closedloop/env3_reorder_only_gap_v3/figure_closed_loop_env3_reorder_only_combined.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-10-p-sweep-closedloop/figure_closed_loop_env3_reorder_only_combined.pdf"
+      ]
+    },
+    {
+      "number": "11",
+      "label": "fig:eval-greedy-locality-shift",
+      "kind": "experiment",
+      "experiment_id": "figure-11-greedy-locality-shift",
+      "paper_sources": [
+        "experiments/figure-11-greedy-locality-shift/figure_greedy_policy_transfer.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-11-greedy-locality-shift/figure_greedy_policy_transfer.pdf"
+      ]
+    },
+    {
+      "number": "12",
+      "label": "fig:eval-planner-overhead-breakdown",
+      "kind": "experiment",
+      "experiment_id": "figure-12-planner-overhead",
+      "paper_sources": [
+        "experiments/figure-12-planner-overhead/figure_03_real_data_planner_overhead_piecewise.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-12-planner-overhead/figure_03_real_data_planner_overhead_piecewise.pdf"
+      ]
+    },
+    {
+      "number": "13",
+      "label": "fig:reorder-panels",
+      "kind": "experiment",
+      "experiment_id": "figure-13-reordering-methods",
+      "paper_sources": [
+        "experiments/figure-13-reordering-methods/figure_reorder_panels.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-13-reordering-methods/figure_reorder_panels.pdf"
+      ]
+    },
+    {
+      "number": "14",
+      "label": "fig:eval-sensitivity-sift1m",
+      "kind": "experiment",
+      "experiment_id": "figure-14-sift1m-sensitivity",
+      "paper_sources": [
+        "experiments/figure-14-sift1m-sensitivity/figure_sift1m_real_s3_sensitivity_combined.pdf"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-14-sift1m-sensitivity/figure_sift1m_real_s3_sensitivity_combined.pdf"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "number": "1",
+      "label": "tab:intro-coarse-cluster",
+      "kind": "experiment",
+      "experiment_id": "table-01-cluster-coarsening",
+      "paper_sources": [
+        "experiments/table-01-cluster-coarsening/intro_cluster_coarsening_sanity_check.tex"
+      ],
+      "paper_artifacts": [
+        "experiments/table-01-cluster-coarsening/intro_cluster_coarsening_sanity_check.tex"
+      ]
+    },
+    {
+      "number": "2",
+      "label": "tab:reorder-methods",
+      "kind": "documentation",
+      "experiment_id": null,
+      "paper_sources": ["sections/reordering.tex"],
+      "paper_artifacts": []
+    },
+    {
+      "number": "3",
+      "label": "tab:eval-datasets",
+      "kind": "documentation",
+      "experiment_id": null,
+      "paper_sources": ["sections/evaluation.tex"],
+      "paper_artifacts": []
+    },
+    {
+      "number": "4",
+      "label": "tab:eval-payload-accounting",
+      "kind": "experiment",
+      "experiment_id": "figure-07-real-lance-metrics",
+      "paper_sources": [
+        "experiments/figure-07-real-lance-metrics/table_payload_accounting.tex"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-07-real-lance-metrics/table_payload_accounting.tex"
+      ]
+    },
+    {
+      "number": "5",
+      "label": "tab:eval-planner-overhead",
+      "kind": "experiment",
+      "experiment_id": "figure-12-planner-overhead",
+      "paper_sources": [
+        "experiments/figure-12-planner-overhead/table_03_real_data_planner_overhead_piecewise.tex"
+      ],
+      "paper_artifacts": [
+        "experiments/figure-12-planner-overhead/table_03_real_data_planner_overhead_piecewise.tex"
+      ]
+    }
+  ]
+}

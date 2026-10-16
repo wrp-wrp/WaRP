@@ -1,0 +1,122 @@
+{
+  "figure": "figure_locality_aware_coaccess_gap",
+  "query_source": "dataset-provided query split",
+  "datasets": [
+    {
+      "dataset": "sift1m",
+      "dataset_label": "SIFT1M",
+      "num_base": 1000000,
+      "num_queries": 10000,
+      "dimension": 128,
+      "nlist": 4096,
+      "nprobe": 128,
+      "train_size": 100000,
+      "query_source": "dataset-provided query split",
+      "query_selection": "full query split"
+    },
+    {
+      "dataset": "glove",
+      "dataset_label": "GloVe",
+      "num_base": 1183514,
+      "num_queries": 10000,
+      "dimension": 100,
+      "nlist": 4096,
+      "nprobe": 128,
+      "train_size": 100000,
+      "query_source": "dataset-provided query split",
+      "query_selection": "full query split"
+    }
+  ],
+  "rows": [
+    {
+      "dataset": "glove",
+      "dataset_label": "GloVe",
+      "method": "hilbert",
+      "method_label": "PCA-2D + Hilbert",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 26.284244881889766,
+      "avg_gap_median": 26.909448818897637,
+      "avg_gap_p25": 24.690944881889763,
+      "avg_gap_p75": 29.22047244094488,
+      "avg_gap_min": 2.4645669291338583,
+      "avg_gap_max": 32.24409448818898
+    },
+    {
+      "dataset": "glove",
+      "dataset_label": "GloVe",
+      "method": "identity",
+      "method_label": "Identity / random",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 31.748079527559057,
+      "avg_gap_median": 31.787401574803148,
+      "avg_gap_p25": 31.58267716535433,
+      "avg_gap_p75": 31.984251968503937,
+      "avg_gap_min": 29.456692913385826,
+      "avg_gap_max": 32.24409448818898
+    },
+    {
+      "dataset": "glove",
+      "dataset_label": "GloVe",
+      "method": "pca",
+      "method_label": "PCA-1D",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 26.656512598425195,
+      "avg_gap_median": 27.708661417322833,
+      "avg_gap_p25": 25.64566929133858,
+      "avg_gap_p75": 29.322834645669293,
+      "avg_gap_min": 2.2440944881889764,
+      "avg_gap_max": 32.20472440944882
+    },
+    {
+      "dataset": "sift1m",
+      "dataset_label": "SIFT1M",
+      "method": "hilbert",
+      "method_label": "PCA-2D + Hilbert",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 10.662411811023622,
+      "avg_gap_median": 10.559055118110237,
+      "avg_gap_p25": 7.803149606299213,
+      "avg_gap_p75": 13.21259842519685,
+      "avg_gap_min": 2.4645669291338583,
+      "avg_gap_max": 31.275590551181104
+    },
+    {
+      "dataset": "sift1m",
+      "dataset_label": "SIFT1M",
+      "method": "identity",
+      "method_label": "Identity / random",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 31.84527244094488,
+      "avg_gap_median": 31.95275590551181,
+      "avg_gap_p25": 31.69291338582677,
+      "avg_gap_p75": 32.06299212598425,
+      "avg_gap_min": 29.251968503937007,
+      "avg_gap_max": 32.23622047244095
+    },
+    {
+      "dataset": "sift1m",
+      "dataset_label": "SIFT1M",
+      "method": "pca",
+      "method_label": "PCA-1D",
+      "num_queries": 10000,
+      "nlist": 4096,
+      "nprobe": 128,
+      "avg_gap_mean": 13.417587401574803,
+      "avg_gap_median": 13.704724409448819,
+      "avg_gap_p25": 12.393700787401574,
+      "avg_gap_p75": 15.118110236220472,
+      "avg_gap_min": 2.440944881889764,
+      "avg_gap_max": 24.35433070866142
+    }
+  ]
+}

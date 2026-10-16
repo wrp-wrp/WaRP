@@ -1,0 +1,105 @@
+{
+  "experiment": "table_sift10m_real_s3_sensitivity",
+  "dataset": "sift10m",
+  "balanced_ps": [
+    16.0
+  ],
+  "num_queries": 240,
+  "warmup_queries": 20,
+  "query_concurrency": 4,
+  "query_subset_mode": "random",
+  "query_subset_seed": 12345,
+  "max_iop_size_bytes": 1152921504606846976,
+  "settings": [
+    {
+      "setting_id": "nprobe_np32_k8",
+      "panel": "nprobe",
+      "setting_label": "nprobe=32",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 32,
+      "budget_k": 8
+    },
+    {
+      "setting_id": "nprobe_np64_k16",
+      "panel": "nprobe",
+      "setting_label": "nprobe=64",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 64,
+      "budget_k": 16
+    },
+    {
+      "setting_id": "nprobe_np128_k32",
+      "panel": "nprobe",
+      "setting_label": "nprobe=128",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 128,
+      "budget_k": 32
+    },
+    {
+      "setting_id": "nprobe_np256_k64",
+      "panel": "nprobe",
+      "setting_label": "nprobe=256",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 256,
+      "budget_k": 64
+    },
+    {
+      "setting_id": "nprobe_np512_k128",
+      "panel": "nprobe",
+      "setting_label": "nprobe=512",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 512,
+      "budget_k": 128
+    },
+    {
+      "setting_id": "cluster_nlist1024_np32_k8",
+      "panel": "cluster",
+      "setting_label": "nlist=1024, nprobe=32",
+      "dataset": "sift10m",
+      "nlist": 1024,
+      "nprobe": 32,
+      "budget_k": 8
+    },
+    {
+      "setting_id": "cluster_nlist2048_np64_k16",
+      "panel": "cluster",
+      "setting_label": "nlist=2048, nprobe=64",
+      "dataset": "sift10m",
+      "nlist": 2048,
+      "nprobe": 64,
+      "budget_k": 16
+    },
+    {
+      "setting_id": "cluster_nlist4096_np128_k32",
+      "panel": "cluster",
+      "setting_label": "nlist=4096, nprobe=128",
+      "dataset": "sift10m",
+      "nlist": 4096,
+      "nprobe": 128,
+      "budget_k": 32
+    },
+    {
+      "setting_id": "cluster_nlist8192_np256_k64",
+      "panel": "cluster",
+      "setting_label": "nlist=8192, nprobe=256",
+      "dataset": "sift10m",
+      "nlist": 8192,
+      "nprobe": 256,
+      "budget_k": 64
+    },
+    {
+      "setting_id": "cluster_nlist16384_np512_k128",
+      "panel": "cluster",
+      "setting_label": "nlist=16384, nprobe=512",
+      "dataset": "sift10m",
+      "nlist": 16384,
+      "nprobe": 512,
+      "budget_k": 128
+    }
+  ]
+}

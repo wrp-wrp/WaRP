@@ -1,0 +1,11 @@
+setting_id,panel,setting_label,dataset,nlist,nprobe,budget_k
+nprobe_np32_k8,nprobe,nprobe=32,sift10m,4096,32,8
+nprobe_np64_k16,nprobe,nprobe=64,sift10m,4096,64,16
+nprobe_np128_k32,nprobe,nprobe=128,sift10m,4096,128,32
+nprobe_np256_k64,nprobe,nprobe=256,sift10m,4096,256,64
+nprobe_np512_k128,nprobe,nprobe=512,sift10m,4096,512,128
+cluster_nlist1024_np32_k8,cluster,"nlist=1024, nprobe=32",sift10m,1024,32,8
+cluster_nlist2048_np64_k16,cluster,"nlist=2048, nprobe=64",sift10m,2048,64,16
+cluster_nlist4096_np128_k32,cluster,"nlist=4096, nprobe=128",sift10m,4096,128,32
+cluster_nlist8192_np256_k64,cluster,"nlist=8192, nprobe=256",sift10m,8192,256,64
+cluster_nlist16384_np512_k128,cluster,"nlist=16384, nprobe=512",sift10m,16384,512,128

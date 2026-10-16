@@ -1,0 +1,90 @@
+{
+  "figure": "figure_closed_loop_qps_latency_tradeoff",
+  "datasets": [
+    "sift1m",
+    "glove",
+    "deep1m",
+    "openimage",
+    "msong",
+    "random1m128"
+  ],
+  "nlist": 4096,
+  "nprobe": 128,
+  "num_queries": 120,
+  "warmup_queries": 20,
+  "query_concurrencies": [
+    4
+  ],
+  "environments": [
+    {
+      "query_concurrency": 4,
+      "io_threads": 64
+    }
+  ],
+  "query_subset_mode": "random",
+  "query_subset_seed": 12345,
+  "s3_bucket": "your-s3-bucket-name",
+  "s3_region": "ap-northeast-1",
+  "ks": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "balanced_ps": [
+    16.0
+  ],
+  "balanced_exact_requests": false,
+  "greedy_gap_kb": [
+    64,
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384
+  ],
+  "greedy_span_caps_mb": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "io_thread_settings": [
+    64
+  ],
+  "max_iop_size_bytes": 549755813888,
+  "repeats": 1,
+  "preset": "paper",
+  "reuse_query_ranges": false,
+  "reuse_remote_workspace": false,
+  "skip_remote_build": false,
+  "ssh_target": "",
+  "latency_model_json": "legacy-clivf:/runners/figure-qps-vs-savings-q4-io64-all6/data/latency_model.json",
+  "latency_model": {
+    "latency_model": "piecewise_linear",
+    "latency_pw_breaks_bytes": [
+      3145728
+    ],
+    "latency_pw_overheads_ms": [
+      28.849557293569053,
+      6.266035367002434
+    ],
+    "latency_pw_rates_ms_per_byte": [
+      2.824569398517584e-06,
+      1.0003677676972243e-05
+    ],
+    "lat_req_ms": 28.849557293569053,
+    "lat_byte_ms": 2.824569398517584e-06
+  }
+}

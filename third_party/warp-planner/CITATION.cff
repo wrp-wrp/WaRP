@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the WaRP paper using the preferred citation."
+title: "WaRP Planner"
+type: software
+authors:
+  - family-names: "Wan"
+    given-names: "Ruipeng"
+  - family-names: "Zeng"
+    given-names: "Xinyu"
+  - family-names: "Qiao"
+    given-names: "Yiming"
+  - family-names: "Zhang"
+    given-names: "Huanchen"
+preferred-citation:
+  type: unpublished
+  title: "WaRP: Workload-Aware Request Planning for Vector Retrieval on Object Storage"
+  year: 2026
+  status: submitted
+  authors:
+    - family-names: "Wan"
+      given-names: "Ruipeng"
+    - family-names: "Zeng"
+      given-names: "Xinyu"
+    - family-names: "Qiao"
+      given-names: "Yiming"
+    - family-names: "Zhang"
+      given-names: "Huanchen"
+license: Apache-2.0
+repository-code: "https://anonymous.4open.science/r/vecio-planner-anon-2523"

@@ -1,0 +1,101 @@
+# Pipeline template owned by the intro coarse-cluster table experiment.
+# runners/table-01-cluster-coarsening/run_data.py deep-copies this
+# dict and sets dataset.name / index.num_clusters / index.nprobe per row.
+# All other keys (reorder/merge/evaluation/...) stay as baked-in paper
+# settings. S3 bucket/region intentionally come from VECIO_S3_*.
+
+dataset:
+  num_queries: 1000
+  query_subset_mode: random
+  query_subset_seed: 12345
+index:
+  base_subset_mode: random
+  base_subset_seed: 12345
+reorder:
+  methods:
+  - hilbert
+  evaluate_queries: 20
+merge:
+  strategies:
+  - separate
+  - greedy
+  - greedy_capped
+  - balanced
+  - lance
+  sweep_queries: 100
+  balanced_objective: ub
+  balanced_request_mode: at_most
+  balanced_max_requests: 256
+  cost_model:
+    latency_model: piecewise_linear
+    latency_pw_breaks_bytes:
+    - 4194304
+    latency_pw_overheads_ms:
+    - 29.02182746496349
+    - 0.1898556349532896
+    latency_pw_rates_ms_per_byte:
+    - 3.5698602351469714e-06
+    - 1.044393799155428e-05
+    latency_per_request: 28.95185848077138
+    latency_per_byte: 1.016002163004165e-05
+    latency_std: 7.427985263408134
+    concurrent_parallelism: 16.587024386213677
+    max_waste_ratio: 0.5
+    max_merge_span: 10485760
+    cost_per_request: 4.0e-07
+    cost_per_byte: 0.0
+    cost_per_wasted_byte: 0.0
+evaluation:
+  run_simulation: false
+  run_s3_test: false
+  run_s3_e2e_benchmark: true
+  run_no_reorder_baseline: false
+  num_test_queries: 20
+  e2e_num_queries: 100
+  e2e_budget_ks:
+  - 8
+  - 16
+  - 32
+  - 64
+  - 128
+  - 256
+  e2e_methods:
+  - greedy_any
+  - greedy_cap_16mb
+  - lance_io
+  - balanced
+  e2e_query_concurrency:
+  - 1
+  e2e_rounds: 2
+  e2e_warmup_queries: 10
+  e2e_include_unbounded_separate_ref: true
+  e2e_lance_io_ignore_k: false
+  e2e_executor_type: async_concurrent
+  e2e_request_workers: 48
+  e2e_scheduler: auto
+  greedy_waste_ratios:
+  - 0.1
+  - 0.5
+  - 0.7
+  - 1
+  - 3
+  - 5
+  - 10
+  e2e_greedy_caps_mb:
+  - 8
+  - 16
+  - 32
+  e2e_greedy_any_include_caps: true
+  concurrent_executor_type: async_concurrent
+  concurrent_max_workers: 32
+network_calibration:
+  enabled: false
+  quick_mode: true
+  concurrent_executor_type: async_concurrent
+output:
+  results_dir: results/pipeline
+  save_intermediate: true
+  plot_formats:
+  - png
+  - pdf
+  plot_dpi: 300

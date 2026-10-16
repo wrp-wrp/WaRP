@@ -1,0 +1,44 @@
+{
+  "frozen_at": "2026-08-04",
+  "region": "ap-northeast-1",
+  "currency": "USD",
+  "s3_standard_get": {
+    "sku": "9C7873KU3ZQBD6BJ",
+    "description": "$0.0037 per 10,000 GET and all other requests",
+    "price_per_request": 0.00000037,
+    "effective_date": "2026-07-01T00:00:00Z",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonS3/current/ap-northeast-1/index.json",
+    "source_publication_date": "2026-07-28T13:10:00Z",
+    "source_sha256": "eb541f4969a384792377532f21a5e57240a50ae3a2e4ffce3e2a70ef767d16fb"
+  },
+  "same_region_transfer": {
+    "price_per_gib": 0.0,
+    "scope": "Data transferred from S3 to AWS services in the same Region",
+    "source": "https://aws.amazon.com/s3/pricing/"
+  },
+  "cross_region_transfer": {
+    "sku": "7EQFT8UVNNKTV2AA",
+    "path": "Asia Pacific (Tokyo) to US East (N. Virginia)",
+    "description": "$0.09 per GB - Asia Pacific (Tokyo) data transfer to US East (Northern Virginia)",
+    "price_per_gib": 0.09,
+    "billing_unit_bytes": 1073741824,
+    "effective_date": "2026-06-01T00:00:00Z",
+    "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSDataTransfer/current/ap-northeast-1/index.json",
+    "source_publication_date": "2026-07-20T18:46:45Z",
+    "source_sha256": "0cdc27bd57f32449ed94bc2cefab87b69c49882c4f52e541b984affe65f83dcf"
+  },
+  "calculation_scope": {
+    "queries": 10000,
+    "get_charge": "planned_ranges_per_query * queries * price_per_request",
+    "same_region_charge": "planned_ranges_per_query * queries * price_per_request",
+    "cross_region_charge": "same_region_charge + planned_payload_bytes_per_query * queries / billing_unit_bytes * price_per_gib",
+    "excludes": [
+      "storage",
+      "PUT",
+      "compute",
+      "tax",
+      "free tiers",
+      "volume discounts"
+    ]
+  }
+}

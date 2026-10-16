@@ -1,0 +1,36 @@
+{
+  "experiment": "intro_cluster_coarsening_sanity_check",
+  "dataset": "sift1m",
+  "recall_k": 10,
+  "target_recall": 0.9973333333333333,
+  "rows": [
+    {
+      "label": "fine_grained",
+      "config": "Fine-grained",
+      "dataset": "sift1m",
+      "nlist": 4096,
+      "nprobe": 192,
+      "avg_cluster_size": 244.140625,
+      "recall_at_k": 0.9973333333333333,
+      "requests_per_query": 192.0,
+      "bytes_per_query": 29395947.52,
+      "candidates_per_query": 57413.96,
+      "run_dir": null,
+      "generated_config": "runners/cluster-coarsening-sanity-check/generated_configs/fine_grained_sift1m_nlist4096_nprobe192.yaml"
+    },
+    {
+      "label": "coarse_grained",
+      "config": "Coarse-grained",
+      "dataset": "sift1m",
+      "nlist": 1024,
+      "nprobe": 80,
+      "avg_cluster_size": 976.5625,
+      "recall_at_k": 0.9970000000000001,
+      "requests_per_query": 80.0,
+      "bytes_per_query": 43522764.8,
+      "candidates_per_query": 85005.4,
+      "run_dir": null,
+      "generated_config": "runners/cluster-coarsening-sanity-check/generated_configs/coarse_grained_sift1m_nlist1024_nprobe80.yaml"
+    }
+  ]
+}

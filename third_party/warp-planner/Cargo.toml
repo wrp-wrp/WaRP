@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "rust",
+    "python",
+]
+# The python crate is a PyO3 cdylib — it links against Python at import
+# time via maturin, not at `cargo build` time. Keep it out of the
+# default workspace build so `cargo build` / `cargo test` at the root
+# operate on the core crate. Build the Python extension with
+# `maturin develop` (see python/README.md).
+default-members = ["rust"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "Apache-2.0"
+repository = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[profile.bench]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

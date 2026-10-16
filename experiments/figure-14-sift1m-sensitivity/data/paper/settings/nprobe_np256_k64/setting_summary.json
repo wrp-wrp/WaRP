@@ -1,0 +1,33 @@
+{
+  "setting_id": "nprobe_np256_k64",
+  "panel": "nprobe",
+  "setting_label": "nprobe=256",
+  "dataset": "sift10m",
+  "nlist": 4096,
+  "nprobe": 256,
+  "budget_k": 64,
+  "num_queries": 20,
+  "query_indices": [
+    1866,
+    2038,
+    2130,
+    2269,
+    2290,
+    3162,
+    3325,
+    3907,
+    5671,
+    5979,
+    6134,
+    6418,
+    6726,
+    6754,
+    6978,
+    7873,
+    7962,
+    8386,
+    9418,
+    9873
+  ],
+  "recall_at_10": 1.0
+}

@@ -1,0 +1,16 @@
+{
+  "latency_model": "piecewise_linear",
+  "latency_pw_breaks_bytes": [
+    3145728
+  ],
+  "latency_pw_overheads_ms": [
+    28.849557293569053,
+    6.266035367002434
+  ],
+  "latency_pw_rates_ms_per_byte": [
+    2.824569398517584e-06,
+    1.0003677676972243e-05
+  ],
+  "lat_req_ms": 28.849557293569053,
+  "lat_byte_ms": 2.824569398517584e-06
+}

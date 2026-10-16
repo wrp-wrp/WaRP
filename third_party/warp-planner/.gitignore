@@ -1,0 +1,47 @@
+# --- Rust ---
+target/
+**/target/
+**/*.rs.bk
+# Cargo.lock is committed at the workspace root for CI reproducibility
+# (the workspace publishes a PyO3 cdylib + a Rust crate, and locked
+# builds matter for the binary side). Stray nested lockfiles are
+# never used by the workspace and should not appear:
+rust/Cargo.lock
+python/Cargo.lock
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.so
+*.egg-info/
+build/
+**/build/
+**/dist/
+**/.venv/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- Local credentials (never commit) ---
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials.json
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+.zed/
+.cursor/
+.codex
+*.swp
+*.swo
+*~
+.#*
+
+# --- OS ---
+.DS_Store
+Thumbs.db

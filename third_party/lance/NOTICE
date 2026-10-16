@@ -1,0 +1,12 @@
+lance-s3-io-optimization (WaRP research fork of Lance)
+Copyright 2026 The WaRP Authors
+
+This product is a research fork of Lance
+(https://github.com/lancedb/lance), Copyright LanceDB Developers.
+Upstream Lance and this fork are distributed under the Apache
+License, Version 2.0 (see LICENSE).
+
+Research modifications include the request planner and scheduler
+integration in `rust/lance-io/`, IVF execution and vector-storage changes
+in `rust/lance/` and `rust/lance-index/`, paper experiment binaries, and
+the corresponding tests and documentation.

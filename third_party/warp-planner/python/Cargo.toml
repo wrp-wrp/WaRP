@@ -1,0 +1,17 @@
+[package]
+name = "warp-planner-py"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "Apache-2.0"
+description = "PyO3 bindings for the warp-planner Rust crate."
+publish = false
+
+[lib]
+name = "vecio_planner"
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+warp-planner = { path = "../rust" }
+pyo3 = { version = "0.22", features = ["extension-module", "abi3-py39"] }

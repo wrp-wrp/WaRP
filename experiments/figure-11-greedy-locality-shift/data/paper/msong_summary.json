@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "complete-paper-evidence",
+  "protocol_id": "figure11-msong-transfer-v1",
+  "aggregation": "median across three order-balanced fixed-policy repeats",
+  "source_archive_sha256": "6de52cf107ba69ce8f1b925e32b48b46ddab7eb5a1fea9af42ce8002fa42ddf7",
+  "source_summary_sha256": "f40fa44ddb25bd6a9e8b4cc08709b856c929592aa0a09b9123a2a39f7c26d82c",
+  "runtime": {
+    "query_concurrency": 4,
+    "io_concurrency_limit": 64,
+    "nlist": 4096,
+    "nprobe": 64,
+    "repeats": 3,
+    "measured_queries_per_repeat": 200,
+    "warmup_queries_per_invocation": 20
+  },
+  "policies": {
+    "sift_tuned_greedy": {
+      "gap_kib": 128,
+      "span_cap_bytes": 1048576
+    },
+    "msong_tuned_greedy": {
+      "gap_kib": 512,
+      "span_cap_bytes": 1048576,
+      "selected_on_disjoint_calibration_queries": true
+    },
+    "warp": {
+      "p": 32,
+      "k_max": 128,
+      "retuned_on_msong": false
+    }
+  },
+  "arms": {
+    "sift_frozen_greedy": {
+      "median_qps": 80.22599322132235,
+      "median_p95_latency_ms": 80.10357,
+      "median_avg_num_requests": 27.81,
+      "median_avg_planned_mib": 3.2969640731811523
+    },
+    "msong_tuned_greedy": {
+      "median_qps": 96.76325246500296,
+      "median_p95_latency_ms": 61.059996,
+      "median_avg_num_requests": 15.85,
+      "median_avg_planned_mib": 6.514719123840332
+    },
+    "warp_p32_k128": {
+      "median_qps": 96.11111658383827,
+      "median_p95_latency_ms": 67.307363,
+      "median_avg_num_requests": 15.445,
+      "median_avg_planned_mib": 6.9533389282226565
+    }
+  },
+  "primary": {
+    "greedy_cross_dataset_transfer_retention": 0.8290956657367242,
+    "greedy_cross_dataset_transfer_loss": 0.17090433426327578,
+    "warp_over_sift_frozen_greedy_qps": 1.1980046955441617,
+    "warp_over_msong_tuned_greedy_qps": 0.9932605006079084
+  },
+  "failure_violations": []
+}

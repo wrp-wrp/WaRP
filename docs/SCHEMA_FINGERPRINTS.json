@@ -1,0 +1,540 @@
+{
+  "entries": {
+    "experiments/figure-01-s3-range-get-latency/data/paper/data.csv": {
+      "columns": [
+        "payload_kb",
+        "request_overhead_ms",
+        "transfer_time_ms"
+      ],
+      "row_count": 8,
+      "type": "csv"
+    },
+    "experiments/figure-04-object-store-io/data/paper/request_fanout.csv": {
+      "columns": [
+        "fanout",
+        "input_ranges_avg",
+        "planned_ranges_avg",
+        "planned_ranges_min",
+        "planned_ranges_max",
+        "payload_bytes_avg",
+        "avg_latency_ms",
+        "p50_latency_ms",
+        "p95_latency_ms",
+        "p99_latency_ms",
+        "max_latency_ms",
+        "wall_ms",
+        "qps",
+        "measured_requests",
+        "measured_iops",
+        "measured_bytes",
+        "txt_path",
+        "per_query_csv"
+      ],
+      "row_count": 128,
+      "type": "csv"
+    },
+    "experiments/figure-04-object-store-io/data/paper/runtime/ap_same_region_serial_stats.json": {
+      "list_len": 13,
+      "row_keys": [
+        "mean_ms",
+        "n",
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "size_bytes",
+        "std_ms"
+      ],
+      "top_kind": "list",
+      "type": "json"
+    },
+    "experiments/figure-04-object-store-io/data/paper/runtime/cross_region_serial_stats.json": {
+      "list_len": 13,
+      "row_keys": [
+        "mean_ms",
+        "n",
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "size_bytes",
+        "std_ms"
+      ],
+      "top_kind": "list",
+      "type": "json"
+    },
+    "experiments/figure-04-object-store-io/data/paper/runtime/public_internet_serial_stats.json": {
+      "list_len": 13,
+      "row_keys": [
+        "mean_ms",
+        "n",
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "size_bytes",
+        "std_ms"
+      ],
+      "top_kind": "list",
+      "type": "json"
+    },
+    "experiments/figure-04-object-store-io/data/paper/runtime/us_same_region_serial_stats.json": {
+      "list_len": 13,
+      "row_keys": [
+        "mean_ms",
+        "n",
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "size_bytes",
+        "std_ms"
+      ],
+      "top_kind": "list",
+      "type": "json"
+    },
+    "experiments/figure-04-object-store-io/stages/real-s3-tiny-request-fanout-sanity/data/paper/fanout_001_per_iop.csv": {
+      "columns": [
+        "seq",
+        "method",
+        "range_start",
+        "range_end",
+        "bytes",
+        "latency_ms",
+        "ok"
+      ],
+      "row_count": 8192,
+      "type": "csv"
+    },
+    "experiments/figure-04-object-store-io/stages/real-s3-tiny-request-fanout-sanity/data/paper/summary.csv": {
+      "columns": [
+        "fanout",
+        "input_ranges_avg",
+        "planned_ranges_avg",
+        "planned_ranges_min",
+        "planned_ranges_max",
+        "payload_bytes_avg",
+        "avg_latency_ms",
+        "p50_latency_ms",
+        "p95_latency_ms",
+        "p99_latency_ms",
+        "max_latency_ms",
+        "wall_ms",
+        "qps",
+        "measured_requests",
+        "measured_iops",
+        "measured_bytes",
+        "txt_path",
+        "per_query_csv"
+      ],
+      "row_count": 128,
+      "type": "csv"
+    },
+    "experiments/figure-04-object-store-io/stages/s3-piecewise-calibration-curves/data/paper/dense_probe.csv": {
+      "columns": [
+        "size_bytes",
+        "n",
+        "mean_ms",
+        "p50_ms",
+        "p95_ms",
+        "p99_ms",
+        "std_ms"
+      ],
+      "row_count": 16,
+      "type": "csv"
+    },
+    "experiments/figure-04-object-store-io/stages/s3-piecewise-calibration-curves/data/paper/source_latency_model.json": {
+      "top_keys": [
+        "lat_byte_ms",
+        "lat_req_ms",
+        "latency_model",
+        "latency_pw_breaks_bytes",
+        "latency_pw_overheads_ms",
+        "latency_pw_rates_ms_per_byte"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-07-real-lance-metrics/data/paper/aws_pricing.json": {
+      "top_keys": [
+        "calculation_scope",
+        "cross_region_transfer",
+        "currency",
+        "frozen_at",
+        "region",
+        "s3_standard_get",
+        "same_region_transfer"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-07-real-lance-metrics/data/paper/figure7_cache_summary.json": {
+      "top_keys": [
+        "cache_off_reported_pass",
+        "campaign",
+        "campaign_identity_sha256",
+        "cells",
+        "census",
+        "evidence_class",
+        "failure_violations",
+        "first_position_counts",
+        "groups",
+        "measured_passes",
+        "new_cache_on_cells",
+        "pairwise_order_counts",
+        "performance_baseline_reference_sha256",
+        "queries_per_pass",
+        "query_concurrency",
+        "reported_pass",
+        "reused_performance_cache_off_cells",
+        "schedule_sha256",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-07-real-lance-metrics/data/paper/figure7_performance_summary.json": {
+      "top_keys": [
+        "aggregate",
+        "cells",
+        "query_policy",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-07-real-lance-metrics/data/paper/figure7_source.csv": {
+      "columns": [
+        "dataset",
+        "method",
+        "recall_at_10",
+        "qps_mean",
+        "qps_sample_sd",
+        "p50_ms_mean",
+        "p50_ms_sample_sd",
+        "p95_ms_mean",
+        "p95_ms_sample_sd",
+        "p99_ms_mean",
+        "p99_ms_sample_sd",
+        "get_per_q_mean",
+        "get_per_q_sample_sd",
+        "bytes_per_q_mean",
+        "payload_gbps_mean",
+        "rx_gbps_mean",
+        "tx_gbps_mean"
+      ],
+      "row_count": 27,
+      "type": "csv"
+    },
+    "experiments/figure-08-sift100m-concurrency-scaling/data/paper/io_summaries/2048-4096.json": {
+      "top_keys": [
+        "campaign",
+        "groups",
+        "measurement_contract",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-08-sift100m-concurrency-scaling/data/paper/io_summaries/4096-8192.json": {
+      "top_keys": [
+        "campaign",
+        "groups",
+        "measurement_contract",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-08-sift100m-concurrency-scaling/data/paper/io_summaries/ladder.json": {
+      "top_keys": [
+        "campaign",
+        "groups",
+        "measurement_contract",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-08-sift100m-concurrency-scaling/data/paper/query_summary.json": {
+      "top_keys": [
+        "aggregate",
+        "campaign",
+        "cells",
+        "measurement_contract",
+        "schema_version",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-09-qps-cost/data/paper/aggregated_results.json": {
+      "row_count": 138,
+      "row_keys": [
+        "avg_latency_ms",
+        "avg_model_bottleneck_ms",
+        "avg_model_objective_ms",
+        "avg_model_work_ms",
+        "avg_num_requests",
+        "avg_planned_bytes",
+        "best_gap_kb",
+        "best_span_cap_bytes",
+        "budget_k",
+        "cloud_io_parallelism",
+        "coverage",
+        "dataset",
+        "layout",
+        "method",
+        "p",
+        "p95_latency_ms",
+        "process_io_threads_limit",
+        "qps",
+        "query_concurrency",
+        "status",
+        "wall_ms"
+      ],
+      "top_keys": [
+        "balanced_ps",
+        "figure",
+        "greedy_candidates",
+        "greedy_unbounded_candidates",
+        "io_thread_settings",
+        "nlist",
+        "nprobe",
+        "query_concurrencies",
+        "repeats",
+        "rows",
+        "selected_points"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-10-p-sweep-closedloop/data/paper/data_gap_env3_v3/aggregated_results.json": {
+      "row_count": 138,
+      "row_keys": [
+        "avg_latency_ms",
+        "avg_model_bottleneck_ms",
+        "avg_model_objective_ms",
+        "avg_model_work_ms",
+        "avg_num_requests",
+        "avg_planned_bytes",
+        "budget_k",
+        "cloud_io_parallelism",
+        "coverage",
+        "dataset",
+        "layout",
+        "method",
+        "p",
+        "p95_latency_ms",
+        "process_io_threads_limit",
+        "qps",
+        "query_concurrency",
+        "status",
+        "wall_ms"
+      ],
+      "top_keys": [
+        "balanced_ps",
+        "figure",
+        "greedy_candidates",
+        "greedy_unbounded_candidates",
+        "io_thread_settings",
+        "nlist",
+        "nprobe",
+        "query_concurrencies",
+        "repeats",
+        "rows",
+        "selected_points"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-10-p-sweep-closedloop/data/paper/data_gap_env3_v3/figure_closed_loop_env3_reorder_only_data.json": {
+      "row_count": 702,
+      "row_keys": [
+        "avg_latency_ms",
+        "avg_model_bottleneck_ms",
+        "avg_model_objective_ms",
+        "avg_model_work_ms",
+        "avg_num_requests",
+        "avg_planned_bytes",
+        "budget_k",
+        "cloud_io_parallelism",
+        "coverage",
+        "dataset",
+        "layout",
+        "method",
+        "p",
+        "p95_latency_ms",
+        "process_io_threads_limit",
+        "qps",
+        "query_concurrency",
+        "status",
+        "wall_ms"
+      ],
+      "top_keys": [
+        "balanced_ps",
+        "figure",
+        "greedy_candidates",
+        "greedy_unbounded_candidates",
+        "io_thread_settings",
+        "nlist",
+        "nprobe",
+        "query_concurrencies",
+        "repeats",
+        "rows",
+        "selected_points"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-11-greedy-locality-shift/data/paper/msong_summary.json": {
+      "top_keys": [
+        "aggregation",
+        "arms",
+        "failure_violations",
+        "policies",
+        "primary",
+        "protocol_id",
+        "runtime",
+        "schema_version",
+        "source_archive_sha256",
+        "source_summary_sha256",
+        "status"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-11-greedy-locality-shift/data/paper/sift_summary.json": {
+      "top_keys": [
+        "aggregation",
+        "cells",
+        "frozen_policies",
+        "geometry_sha256",
+        "input_manifest_sha256",
+        "protocol_id",
+        "schema_version"
+      ],
+      "type": "json"
+    },
+    "experiments/figure-12-planner-overhead/data/paper/merged_summary.csv": {
+      "columns": [
+        "dataset",
+        "nprobe",
+        "K",
+        "plain_timed_out",
+        "plain_p95_ms",
+        "dc_timed_out",
+        "dc_p95_ms",
+        "adaptive_dc_p95_ms",
+        "wqs_p95_ms",
+        "wqs_over_adaptive_dc_p95",
+        "adaptive_dc_err_avg_pct",
+        "adaptive_dc_err_max_pct",
+        "wqs_err_avg_pct",
+        "wqs_err_max_pct"
+      ],
+      "row_count": 18,
+      "type": "csv"
+    },
+    "experiments/figure-13-reordering-methods/data/paper/stages/locality_gap.csv": {
+      "columns": [
+        "dataset",
+        "dataset_label",
+        "method",
+        "method_label",
+        "dimension",
+        "num_queries",
+        "nlist",
+        "nprobe",
+        "reorder_time_ms",
+        "weighted_gap_value",
+        "weighted_gap_ratio"
+      ],
+      "row_count": 42,
+      "type": "csv"
+    },
+    "experiments/figure-13-reordering-methods/data/paper/stages/reorder_cost.csv": {
+      "columns": [
+        "dataset",
+        "sample_source",
+        "dimension",
+        "num_clusters",
+        "graph_degree",
+        "method",
+        "method_label",
+        "reorder_time_ms"
+      ],
+      "row_count": 35,
+      "type": "csv"
+    },
+    "experiments/figure-13-reordering-methods/stages/locality-aware-coaccess-gap/data/paper/figure_locality_aware_coaccess_gap.csv": {
+      "columns": [
+        "dataset",
+        "dataset_label",
+        "method",
+        "method_label",
+        "dimension",
+        "num_queries",
+        "nlist",
+        "nprobe",
+        "reorder_time_ms",
+        "weighted_gap_value",
+        "weighted_gap_ratio"
+      ],
+      "row_count": 42,
+      "type": "csv"
+    },
+    "experiments/figure-13-reordering-methods/stages/reorder-cost/data/paper/figure_reorder_cost_cluster_sweep.csv": {
+      "columns": [
+        "dataset",
+        "sample_source",
+        "dimension",
+        "num_clusters",
+        "graph_degree",
+        "method",
+        "method_label",
+        "reorder_time_ms"
+      ],
+      "row_count": 35,
+      "type": "csv"
+    },
+    "experiments/figure-14-sift1m-sensitivity/data/paper/table_sift1m_real_s3_sensitivity.csv": {
+      "columns": [
+        "panel",
+        "setting_id",
+        "setting_label",
+        "nlist",
+        "nprobe",
+        "recall_at_10",
+        "budget_k1",
+        "budget_k2",
+        "separate_qps",
+        "separate_p95",
+        "lance_r_qps",
+        "lance_r_p95",
+        "warp_k1_qps",
+        "warp_k1_p95",
+        "warp_k2_qps",
+        "warp_k2_p95"
+      ],
+      "row_count": 8,
+      "type": "csv"
+    },
+    "experiments/table-01-cluster-coarsening/data/paper/summary.json": {
+      "row_count": 2,
+      "row_keys": [
+        "avg_cluster_size",
+        "bytes_per_query",
+        "bytes_per_query_mb",
+        "candidates_per_query",
+        "config",
+        "coverage",
+        "label",
+        "nlist",
+        "nprobe",
+        "p95_latency_ms",
+        "recall_at_k",
+        "requests_per_query",
+        "run_dir"
+      ],
+      "top_keys": [
+        "dataset",
+        "experiment",
+        "recall_k",
+        "rows",
+        "target_recall"
+      ],
+      "type": "json"
+    }
+  },
+  "version": 1
+}

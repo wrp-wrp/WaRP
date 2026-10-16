@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PlannerOverheadRealInput",
+  "type": "object",
+  "required": [
+    "version",
+    "benchmark_name",
+    "latency_model",
+    "benchmark_grid",
+    "datasets"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "benchmark_name": {
+      "type": "string",
+      "const": "planner_overhead_real_piecewise"
+    },
+    "latency_model": {
+      "type": "object",
+      "required": [
+        "kind",
+        "breaks_bytes",
+        "overheads_ms",
+        "rates_ms_per_byte",
+        "concurrent_parallelism",
+        "max_waste_ratio",
+        "max_merge_span"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "piecewise_linear"
+        },
+        "breaks_bytes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "overheads_ms": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "rates_ms_per_byte": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "concurrent_parallelism": {
+          "type": "number"
+        },
+        "max_waste_ratio": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_merge_span": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "benchmark_grid": {
+      "type": "object",
+      "required": [
+        "nprobes",
+        "ks",
+        "num_queries",
+        "warmup_queries"
+      ],
+      "properties": {
+        "nprobes": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "ks": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "num_queries": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "warmup_queries": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dataset",
+          "label",
+          "nlist",
+          "max_nprobe",
+          "cluster_offsets",
+          "cluster_sizes",
+          "queries"
+        ],
+        "properties": {
+          "dataset": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "nlist": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "max_nprobe": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "cluster_offsets": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "cluster_sizes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "query_idx",
+                "cluster_ids"
+              ],
+              "properties": {
+                "query_idx": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "cluster_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

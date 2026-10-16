@@ -1,0 +1,62 @@
+{
+  "figure": "figure_09_real_s3_strict_budget_k_latency_curves",
+  "datasets": [
+    "sift10m"
+  ],
+  "nlist": 4096,
+  "nprobe": 256,
+  "num_queries": 20,
+  "warmup_queries": 20,
+  "query_subset_mode": "random",
+  "query_subset_seed": 12345,
+  "s3_bucket": "your-s3-bucket-name",
+  "s3_region": "ap-northeast-1",
+  "ks": [
+    64
+  ],
+  "greedy_rhos": [
+    0.0,
+    0.1,
+    0.2,
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    4.0
+  ],
+  "greedy_span_caps_mb": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "balanced_ps": [
+    30.0
+  ],
+  "balanced_exact_requests": false,
+  "process_io_threads_limit": 128,
+  "cloud_io_parallelism": 128,
+  "max_iop_size_bytes": 16777216,
+  "repeats": 3,
+  "ssh_target": "ubuntu@example-host",
+  "reuse_existing_uri_json_dir": "",
+  "latency_model_json": "data/nprobe_256/latency_model.json",
+  "latency_model": {
+    "latency_model": "piecewise_linear",
+    "latency_pw_breaks_bytes": [
+      14155776
+    ],
+    "latency_pw_overheads_ms": [
+      136.81003756522318,
+      415.2643637003105
+    ],
+    "latency_pw_rates_ms_per_byte": [
+      2.8509418153234235e-05,
+      8.83869673640146e-06
+    ],
+    "lat_req_ms": 136.81003756522318,
+    "lat_byte_ms": 2.8509418153234235e-05
+  }
+}

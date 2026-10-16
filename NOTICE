@@ -1,0 +1,24 @@
+warp-experiments
+Copyright 2026 The WaRP Authors
+
+This product is the experiment-reproduction artifact accompanying the
+research paper "WaRP: Workload-Aware Request Planning for Vector Retrieval
+on Object Storage".
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may
+not use this product except in compliance with the License. A copy of
+the License is provided in the LICENSE file at the root of this
+repository.
+
+The experiment-owned render scripts and shared modules under src/plotting/
+depend on third-party Python packages (matplotlib, numpy, pandas, scipy,
+scikit-learn, pyyaml, pillow); each package is distributed under its own
+license, and no source from those packages is bundled here.
+
+The end-to-end real-Lance experiments invoke the fixed Lance fork included
+under third_party/lance. It retains its own LICENSE and NOTICE files
+(Apache-2.0, derived from github.com/lancedb/lance).
+
+The independent planner is included under third_party/warp-planner and
+retains its own LICENSE and NOTICE files. Original source revisions and
+file hashes of all three components are recorded in SOURCE_MANIFEST.json.

@@ -1,0 +1,50 @@
+{
+  "fit_design": {
+    "piecewise_model": "fixed_2seg",
+    "linear_weighting": "sqrt_size",
+    "piecewise_weighting": "external_model",
+    "probe_weight": 4.0,
+    "piecewise_source": "source_latency_model.json"
+  },
+  "linear": {
+    "overhead_ms": 9.527877797984898,
+    "rate_ms_per_byte": 9.746207754771771e-06,
+    "anchor_metrics": null,
+    "probe_metrics": {
+      "rmse_ms": 3.5868400110358793,
+      "mae_ms": 2.526287944771486,
+      "mape_percent": 5.132704762633989,
+      "max_abs_rel_percent": 35.48915164673326
+    },
+    "combined_metrics": {
+      "rmse_ms": 3.5868400110358793,
+      "mae_ms": 2.526287944771486,
+      "mape_percent": 5.132704762633989,
+      "max_abs_rel_percent": 35.48915164673326
+    }
+  },
+  "piecewise_continuous": {
+    "break_bytes": 3145728.0,
+    "overheads_ms": [
+      28.849557293569053,
+      6.266035367002434
+    ],
+    "rates_ms_per_byte": [
+      2.824569398517584e-06,
+      1.0003677676972243e-05
+    ],
+    "anchor_metrics": null,
+    "probe_metrics": {
+      "rmse_ms": 1.2690386434537269,
+      "mae_ms": 1.110708350716446,
+      "mape_percent": 1.5215634867537007,
+      "max_abs_rel_percent": 4.653921910668494
+    },
+    "combined_metrics": {
+      "rmse_ms": 1.2690386434537269,
+      "mae_ms": 1.110708350716446,
+      "mape_percent": 1.5215634867537007,
+      "max_abs_rel_percent": 4.653921910668494
+    }
+  }
+}

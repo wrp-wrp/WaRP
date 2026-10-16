@@ -1,0 +1,7 @@
+-r requirements-light.txt
+boto3>=1.34,<2
+h5py>=3.11,<4
+faiss-cpu>=1.8,<2
+gdown>=5.2,<6
+maturin>=1.4,<2
+pyarrow>=14,<22

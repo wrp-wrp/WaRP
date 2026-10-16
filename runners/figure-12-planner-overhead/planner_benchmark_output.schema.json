@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PlannerOverheadRealOutput",
+  "type": "object",
+  "required": [
+    "version",
+    "benchmark_name",
+    "rows"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "benchmark_name": {
+      "type": "string",
+      "const": "planner_overhead_real_piecewise"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dataset",
+          "nprobe",
+          "K",
+          "queries",
+          "plain_timed_out",
+          "plain_med_ms",
+          "plain_p95_ms",
+          "plain_max_ms",
+          "dc_timed_out",
+          "dc_med_ms",
+          "dc_p95_ms",
+          "dc_max_ms",
+          "adaptive_dc_timed_out",
+          "adaptive_dc_med_ms",
+          "adaptive_dc_p95_ms",
+          "adaptive_dc_max_ms",
+          "wqs_timed_out",
+          "wqs_med_ms",
+          "wqs_p95_ms",
+          "wqs_max_ms",
+          "adaptive_over_dc_p95",
+          "wqs_over_adaptive_dc_p95",
+          "adaptive_dc_err_avg_pct",
+          "adaptive_dc_err_max_pct",
+          "wqs_err_avg_pct",
+          "wqs_err_max_pct"
+        ],
+        "properties": {
+          "dataset": {
+            "type": "string"
+          },
+          "nprobe": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "K": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "queries": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "plain_timed_out": {
+            "type": "boolean"
+          },
+          "plain_med_ms": {
+            "type": "number"
+          },
+          "plain_p95_ms": {
+            "type": "number"
+          },
+          "plain_max_ms": {
+            "type": "number"
+          },
+          "dc_timed_out": {
+            "type": "boolean"
+          },
+          "dc_med_ms": {
+            "type": "number"
+          },
+          "dc_p95_ms": {
+            "type": "number"
+          },
+          "dc_max_ms": {
+            "type": "number"
+          },
+          "adaptive_dc_timed_out": {
+            "type": "boolean"
+          },
+          "adaptive_dc_med_ms": {
+            "type": "number"
+          },
+          "adaptive_dc_p95_ms": {
+            "type": "number"
+          },
+          "adaptive_dc_max_ms": {
+            "type": "number"
+          },
+          "wqs_timed_out": {
+            "type": "boolean"
+          },
+          "wqs_med_ms": {
+            "type": "number"
+          },
+          "wqs_p95_ms": {
+            "type": "number"
+          },
+          "wqs_max_ms": {
+            "type": "number"
+          },
+          "adaptive_over_dc_p95": {
+            "type": "number"
+          },
+          "wqs_over_adaptive_dc_p95": {
+            "type": "number"
+          },
+          "adaptive_dc_err_avg_pct": {
+            "type": "number"
+          },
+          "adaptive_dc_err_max_pct": {
+            "type": "number"
+          },
+          "wqs_err_avg_pct": {
+            "type": "number"
+          },
+          "wqs_err_max_pct": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

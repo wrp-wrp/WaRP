@@ -1,0 +1,32 @@
+{
+  "version": "v1",
+  "benchmark_name": "planner_overhead_real_piecewise",
+  "rows": [
+    {
+      "dataset": "GLOVE",
+      "nprobe": 256,
+      "K": 64,
+      "queries": 120,
+      "exact_med_ms": 184.323608,
+      "exact_p95_ms": 241.29068645,
+      "fast_med_ms": 4.0298535,
+      "fast_p95_ms": 5.753344949999999,
+      "speedup_p95": 41.939200334233405,
+      "err_avg_pct": 1.1315139835176913,
+      "err_max_pct": 3.3536654559782426
+    },
+    {
+      "dataset": "SIFT1M",
+      "nprobe": 256,
+      "K": 64,
+      "queries": 120,
+      "exact_med_ms": 182.1889645,
+      "exact_p95_ms": 243.69590664999998,
+      "fast_med_ms": 4.001402000000001,
+      "fast_p95_ms": 5.7782935,
+      "speedup_p95": 42.17437322109027,
+      "err_avg_pct": 1.0904178638193518,
+      "err_max_pct": 2.791734529545036
+    }
+  ]
+}

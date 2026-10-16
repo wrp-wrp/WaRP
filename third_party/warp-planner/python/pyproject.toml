@@ -1,0 +1,37 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "vecio-planner"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "I/O merge planners for cluster-based vector search over cloud object storage."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "vecio-planner contributors" },
+]
+keywords = ["s3", "ivf", "vector-search", "io-scheduling", "object-storage"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering",
+    "Topic :: System :: Distributed Computing",
+]
+
+[project.urls]
+Repository = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
+Documentation = "https://anonymous.4open.science/r/vecio-planner-anon-2523"
+
+[tool.maturin]
+module-name = "vecio_planner"
+features = ["pyo3/extension-module"]

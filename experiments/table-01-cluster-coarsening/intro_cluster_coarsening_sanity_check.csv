@@ -1,0 +1,3 @@
+setting,nlist,nprobe,recall_at_10,requests_per_query,candidates_per_query
+Fine clustering,4096,192,0.9973,192,57414.0
+Coarse clustering,1024,80,0.9970,80,85005.4

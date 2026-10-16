@@ -1,0 +1,36 @@
+dataset,sample_source,dimension,num_clusters,graph_degree,method,method_label,reorder_time_ms
+sift1m,sift1m_base_random_without_replacement,128,512,32,hilbert,PCA-2D + Hilbert,2.5223210104741156
+sift1m,sift1m_base_random_without_replacement,128,512,32,identity,Identity,0.11709099635481834
+sift1m,sift1m_base_random_without_replacement,128,512,32,pca,PCA-1D,1.1086119920946658
+sift1m,sift1m_base_random_without_replacement,128,512,32,pca_zorder,PCA-2D + Z-order,1.9677979871630669
+sift1m,sift1m_base_random_without_replacement,128,512,32,random_proj,Random proj.,0.2314370358362794
+sift1m,sift1m_base_random_without_replacement,128,512,32,spectral_cold,Spectral (cold),6.730380991939455
+sift1m,sift1m_base_random_without_replacement,128,512,32,spectral_log,Spectral (log),6.538015033584088
+sift1m,sift1m_base_random_without_replacement,128,1024,32,hilbert,PCA-2D + Hilbert,4.168617946561426
+sift1m,sift1m_base_random_without_replacement,128,1024,32,identity,Identity,0.11882302351295948
+sift1m,sift1m_base_random_without_replacement,128,1024,32,pca,PCA-1D,1.7300479812547565
+sift1m,sift1m_base_random_without_replacement,128,1024,32,pca_zorder,PCA-2D + Z-order,3.1165489926934242
+sift1m,sift1m_base_random_without_replacement,128,1024,32,random_proj,Random proj.,0.24725199909880757
+sift1m,sift1m_base_random_without_replacement,128,1024,32,spectral_cold,Spectral (cold),12.128093978390098
+sift1m,sift1m_base_random_without_replacement,128,1024,32,spectral_log,Spectral (log),12.488098000176251
+sift1m,sift1m_base_random_without_replacement,128,2048,32,hilbert,PCA-2D + Hilbert,8.062510984018445
+sift1m,sift1m_base_random_without_replacement,128,2048,32,identity,Identity,0.1226970343850553
+sift1m,sift1m_base_random_without_replacement,128,2048,32,pca,PCA-1D,3.701110021211207
+sift1m,sift1m_base_random_without_replacement,128,2048,32,pca_zorder,PCA-2D + Z-order,5.983498005662113
+sift1m,sift1m_base_random_without_replacement,128,2048,32,random_proj,Random proj.,0.3793869982473552
+sift1m,sift1m_base_random_without_replacement,128,2048,32,spectral_cold,Spectral (cold),70.44828397920355
+sift1m,sift1m_base_random_without_replacement,128,2048,32,spectral_log,Spectral (log),24.253604002296925
+sift1m,sift1m_base_random_without_replacement,128,4096,32,hilbert,PCA-2D + Hilbert,15.093702008016407
+sift1m,sift1m_base_random_without_replacement,128,4096,32,identity,Identity,0.13287499314174056
+sift1m,sift1m_base_random_without_replacement,128,4096,32,pca,PCA-1D,2.4729659780859947
+sift1m,sift1m_base_random_without_replacement,128,4096,32,pca_zorder,PCA-2D + Z-order,10.739550983998924
+sift1m,sift1m_base_random_without_replacement,128,4096,32,random_proj,Random proj.,1.3694629888050258
+sift1m,sift1m_base_random_without_replacement,128,4096,32,spectral_cold,Spectral (cold),92.26167999440804
+sift1m,sift1m_base_random_without_replacement,128,4096,32,spectral_log,Spectral (log),51.8092600395903
+sift1m,sift1m_base_random_without_replacement,128,8192,32,hilbert,PCA-2D + Hilbert,29.618829023092985
+sift1m,sift1m_base_random_without_replacement,128,8192,32,identity,Identity,0.15093799447640777
+sift1m,sift1m_base_random_without_replacement,128,8192,32,pca,PCA-1D,3.255018964409828
+sift1m,sift1m_base_random_without_replacement,128,8192,32,pca_zorder,PCA-2D + Z-order,24.016042007133365
+sift1m,sift1m_base_random_without_replacement,128,8192,32,random_proj,Random proj.,1.363466028124094
+sift1m,sift1m_base_random_without_replacement,128,8192,32,spectral_cold,Spectral (cold),142.8464410128072
+sift1m,sift1m_base_random_without_replacement,128,8192,32,spectral_log,Spectral (log),112.34480998245999

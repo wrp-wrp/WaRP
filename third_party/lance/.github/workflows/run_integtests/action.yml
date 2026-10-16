@@ -1,0 +1,19 @@
+name: run-tests
+
+description: "Install lance wheel and run integ tests"
+runs:
+  using: "composite"
+  steps:
+  - name: Install dependencies
+    working-directory: python
+    shell: bash
+    run: |
+      pip3 install $(ls target/wheels/pylance-*.whl)[tests,ray]
+  - name: Start localstack
+    shell: bash
+    run: |
+      docker compose -f docker-compose.yml up -d --wait
+  - name: Run python tests
+    shell: bash
+    working-directory: python
+    run: make integtest

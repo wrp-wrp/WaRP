@@ -1,0 +1,142 @@
+{
+  "experiment": "intro_cluster_coarsening_sanity_check",
+  "dataset": "sift1m",
+  "recall_k": 10,
+  "query_count": 300,
+  "query_seed": 12345,
+  "target_recall": 0.9973333333333333,
+  "fine": {
+    "nlist": 4096,
+    "nprobe": 192,
+    "recall_at_k": 0.9973333333333333,
+    "avg_requests_per_query": 192.0,
+    "avg_candidates_per_query": 57413.96,
+    "avg_bytes_per_query": 29395947.52,
+    "avg_cluster_size": 244.140625,
+    "target_recall": 0.9973333333333333,
+    "delta_to_target": 0.0
+  },
+  "coarse": {
+    "nlist": 1024,
+    "nprobe": 80,
+    "recall_at_k": 0.9970000000000001,
+    "avg_requests_per_query": 80.0,
+    "avg_candidates_per_query": 85005.4,
+    "avg_bytes_per_query": 43522764.8,
+    "avg_cluster_size": 976.5625,
+    "target_recall": 0.9973333333333333,
+    "delta_to_target": 0.0003333333333331856
+  },
+  "fine_grid": [
+    {
+      "nlist": 4096,
+      "nprobe": 128,
+      "recall_at_k": 0.9913333333333333,
+      "avg_requests_per_query": 128.0,
+      "avg_candidates_per_query": 39479.35666666667,
+      "avg_bytes_per_query": 20213430.613333333,
+      "avg_cluster_size": 244.140625
+    },
+    {
+      "nlist": 4096,
+      "nprobe": 160,
+      "recall_at_k": 0.9946666666666668,
+      "avg_requests_per_query": 160.0,
+      "avg_candidates_per_query": 48514.6,
+      "avg_bytes_per_query": 24839475.2,
+      "avg_cluster_size": 244.140625
+    },
+    {
+      "nlist": 4096,
+      "nprobe": 192,
+      "recall_at_k": 0.9973333333333333,
+      "avg_requests_per_query": 192.0,
+      "avg_candidates_per_query": 57413.96,
+      "avg_bytes_per_query": 29395947.52,
+      "avg_cluster_size": 244.140625
+    },
+    {
+      "nlist": 4096,
+      "nprobe": 224,
+      "recall_at_k": 0.9976666666666667,
+      "avg_requests_per_query": 224.0,
+      "avg_candidates_per_query": 66257.3,
+      "avg_bytes_per_query": 33923737.6,
+      "avg_cluster_size": 244.140625
+    },
+    {
+      "nlist": 4096,
+      "nprobe": 256,
+      "recall_at_k": 0.9976666666666667,
+      "avg_requests_per_query": 256.0,
+      "avg_candidates_per_query": 74962.44666666667,
+      "avg_bytes_per_query": 38380772.693333335,
+      "avg_cluster_size": 244.140625
+    }
+  ],
+  "coarse_grid": [
+    {
+      "nlist": 1024,
+      "nprobe": 32,
+      "recall_at_k": 0.98,
+      "avg_requests_per_query": 32.0,
+      "avg_candidates_per_query": 35410.19666666666,
+      "avg_bytes_per_query": 18130020.69333333,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 48,
+      "recall_at_k": 0.99,
+      "avg_requests_per_query": 48.0,
+      "avg_candidates_per_query": 52080.03333333333,
+      "avg_bytes_per_query": 26664977.066666666,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 64,
+      "recall_at_k": 0.995,
+      "avg_requests_per_query": 64.0,
+      "avg_candidates_per_query": 68707.88666666667,
+      "avg_bytes_per_query": 35178437.97333334,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 80,
+      "recall_at_k": 0.9970000000000001,
+      "avg_requests_per_query": 80.0,
+      "avg_candidates_per_query": 85005.4,
+      "avg_bytes_per_query": 43522764.8,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 96,
+      "recall_at_k": 0.9986666666666667,
+      "avg_requests_per_query": 96.0,
+      "avg_candidates_per_query": 101192.79666666666,
+      "avg_bytes_per_query": 51810711.89333333,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 112,
+      "recall_at_k": 0.9993333333333334,
+      "avg_requests_per_query": 112.0,
+      "avg_candidates_per_query": 117138.53,
+      "avg_bytes_per_query": 59974927.36,
+      "avg_cluster_size": 976.5625
+    },
+    {
+      "nlist": 1024,
+      "nprobe": 128,
+      "recall_at_k": 0.9993333333333334,
+      "avg_requests_per_query": 128.0,
+      "avg_candidates_per_query": 132961.35,
+      "avg_bytes_per_query": 68076211.2,
+      "avg_cluster_size": 976.5625
+    }
+  ]
+}

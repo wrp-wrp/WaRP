@@ -1,0 +1,38 @@
+{
+  "experiment": "intro_cluster_coarsening_sanity_check",
+  "dataset": "sift1m",
+  "recall_k": 10,
+  "target_recall": 0.9973333333333333,
+  "rows": [
+    {
+      "label": "fine_grained",
+      "config": "Fine-grained",
+      "nlist": 4096,
+      "avg_cluster_size": 244.140625,
+      "nprobe": 192,
+      "recall_at_k": 0.9973333333333333,
+      "requests_per_query": 192.0,
+      "bytes_per_query": 29395947.52,
+      "bytes_per_query_mb": 28.03416015625,
+      "candidates_per_query": 57413.96,
+      "p95_latency_ms": null,
+      "coverage": 1.0,
+      "run_dir": null
+    },
+    {
+      "label": "coarse_grained",
+      "config": "Coarse-grained",
+      "nlist": 1024,
+      "avg_cluster_size": 976.5625,
+      "nprobe": 80,
+      "recall_at_k": 0.9970000000000001,
+      "requests_per_query": 80.0,
+      "bytes_per_query": 43522764.8,
+      "bytes_per_query_mb": 41.50654296875,
+      "candidates_per_query": 85005.4,
+      "p95_latency_ms": null,
+      "coverage": 1.0,
+      "run_dir": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "probe_stats_json": "legacy-clivf:/runners/figure_11_lance_only_high_load_real_s3_stress/data/overhead_calibration/probe_run_server_single_request_1_16mib/serial_stats.json",
+  "latency_model_json": "legacy-clivf:/runners/figure_11_lance_only_high_load_real_s3_stress/data/overhead_calibration/latency_model_single_request_probe_server_1_16mib.json",
+  "calibration_summary_json": "legacy-clivf:/runners/figure_11_lance_only_high_load_real_s3_stress/data/overhead_calibration/calibration_summary_single_request_probe_server_1_16mib.json",
+  "rerun_probe": false,
+  "anchor_points": 0,
+  "dense_probe_points": 16,
+  "probe_command": null,
+  "note": "Figure 3 now freezes the server-side single-request 1-16 MiB calibration with a 3 MiB breakpoint; legacy anchor-based fit data is intentionally excluded."
+}

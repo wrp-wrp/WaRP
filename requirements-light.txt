@@ -1,0 +1,7 @@
+numpy>=2.0,<3
+pandas>=2.2,<4
+scipy>=1.13,<2
+scikit-learn>=1.5,<2
+matplotlib>=3.10,<3.11
+PyYAML>=6,<7
+Pillow>=10,<13

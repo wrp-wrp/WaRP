@@ -1,0 +1,29 @@
+{
+  "calibration_kind": "single_request_probe_constrained_piecewise",
+  "probe_stats_json": "legacy-clivf:/runners/figure_11_lance_only_high_load_real_s3_stress/data/overhead_calibration/probe_run_server_single_request_1_16mib/serial_stats.json",
+  "metric": "p50_ms",
+  "size_weighting": "sqrt_size",
+  "min_break_mib": 2.0,
+  "max_break_mib": 12.0,
+  "min_segment_points": 3,
+  "enforce_nondecreasing_bandwidth": false,
+  "fit": {
+    "break_bytes": 3145728.0,
+    "break_mib": 3.0,
+    "overheads_ms": [
+      28.849557293569053,
+      6.266035367002434
+    ],
+    "rates_ms_per_byte": [
+      2.824569398517584e-06,
+      1.0003677676972243e-05
+    ],
+    "rmse_ms": 1.2690386434537269,
+    "mae_ms": 1.110708350716446,
+    "mape_percent": 1.5215634867537007,
+    "weighted_sse": 73.26537552424975,
+    "left_points": 3.0,
+    "right_points": 13.0,
+    "max_abs_rel_percent": 4.653921910668494
+  }
+}

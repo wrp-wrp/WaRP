@@ -1,0 +1,63 @@
+{
+  "input_csv": "experiments/figure-12-planner-overhead/data/paper/merged_summary.csv",
+  "output_table_tex": "experiments/figure-12-planner-overhead/table_03_real_data_planner_overhead_piecewise.tex",
+  "output_summary_csv": "experiments/figure-12-planner-overhead/table_03_real_data_planner_overhead_piecewise.csv",
+  "figure_nprobe": 256,
+  "figure_k": 128,
+  "figure_pdf": "experiments/figure-12-planner-overhead/figure_03_real_data_planner_overhead_piecewise.pdf",
+  "figure_png": "experiments/figure-12-planner-overhead/figure_03_real_data_planner_overhead_piecewise.png",
+  "panels": {
+    "SIFT1M": [
+      {
+        "setting": "256/128",
+        "method": "plain",
+        "p95_ms": 837.9137291,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "dc",
+        "p95_ms": 294.58001935,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "adaptive_dc",
+        "p95_ms": 5.98466415,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "wqs",
+        "p95_ms": 1.72470735,
+        "timed_out": false
+      }
+    ],
+    "GloVe": [
+      {
+        "setting": "256/128",
+        "method": "plain",
+        "p95_ms": 942.62742915,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "dc",
+        "p95_ms": 324.505159,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "adaptive_dc",
+        "p95_ms": 5.9880132,
+        "timed_out": false
+      },
+      {
+        "setting": "256/128",
+        "method": "wqs",
+        "p95_ms": 1.7158224,
+        "timed_out": false
+      }
+    ]
+  }
+}

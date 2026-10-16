@@ -1,0 +1,8 @@
+pylance
+seaborn
+matplotlib
+tqdm
+attrs
+pandas
+pytest
+ruff

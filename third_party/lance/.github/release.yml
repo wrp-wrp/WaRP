@@ -1,0 +1,27 @@
+changelog:
+  exclude:
+    labels:
+      - ci
+      - chore
+  categories:
+    - title: Breaking Changes 🛠
+      labels:
+        - breaking-change
+    - title: Critical Fixes ‼️
+      labels:
+        - critical-fix
+    - title: New Features 🎉
+      labels:
+        - enhancement
+    - title: Bug Fixes 🐛
+      labels:
+        - bug
+    - title: Documentation 📚
+      labels:
+        - documentation
+    - title: Performance Improvements 🚀
+      labels:
+        - performance
+    - title: Other Changes
+      labels:
+        - "*"

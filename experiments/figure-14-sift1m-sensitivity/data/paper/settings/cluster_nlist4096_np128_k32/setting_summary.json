@@ -1,0 +1,33 @@
+{
+  "setting_id": "cluster_nlist4096_np128_k32",
+  "panel": "cluster",
+  "setting_label": "nlist=4096, nprobe=128",
+  "dataset": "sift10m",
+  "nlist": 4096,
+  "nprobe": 128,
+  "budget_k": 32,
+  "num_queries": 20,
+  "query_indices": [
+    1866,
+    2038,
+    2130,
+    2269,
+    2290,
+    3162,
+    3325,
+    3907,
+    5671,
+    5979,
+    6134,
+    6418,
+    6726,
+    6754,
+    6978,
+    7873,
+    7962,
+    8386,
+    9418,
+    9873
+  ],
+  "recall_at_10": 0.995
+}
