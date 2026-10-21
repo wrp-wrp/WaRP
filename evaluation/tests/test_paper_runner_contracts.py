@@ -57,6 +57,21 @@ from artifact.prepare_dataset import (
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _minimal_lance_source(root: Path) -> None:
+    for directory in (".cargo", "protos", "rust/example/src", "python/python/lance"):
+        (root / directory).mkdir(parents=True, exist_ok=True)
+    for relative, contents in {
+        "Cargo.toml": "[workspace]\n",
+        "Cargo.lock": "lock-v1\n",
+        "rust-toolchain.toml": '[toolchain]\nchannel = "stable"\n',
+        ".cargo/config.toml": "[build]\n",
+        "rust/example/src/lib.rs": "pub fn value() -> u8 { 1 }\n",
+        "python/Cargo.toml": '[package]\nname = "lance"\n',
+        "python/python/lance/__init__.py": "VALUE = 1\n",
+    }.items():
+        (root / relative).write_text(contents, encoding="utf-8")
+
+
 class ProductionCampaignLockTests(unittest.TestCase):
     def test_paper_campaigns_and_lance_base_are_pinned(self) -> None:
         self.assertEqual(
@@ -256,6 +271,57 @@ class ProductionCampaignLockTests(unittest.TestCase):
             with_python = source_tree_sha256(root)
             python_source.write_text("VALUE = 2\n", encoding="utf-8")
             self.assertNotEqual(source_tree_sha256(root), with_python)
+
+    def test_editable_binding_preserves_exported_source_identity(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _minimal_lance_source(root)
+            expected = source_tree_sha256(root)
+            with mock.patch("artifact.lance_toolchain.LANCE_EXPORTED_SOURCE_SHA256", expected):
+                before = validate_lance_source(root)
+                extension = root / "python/python/lance/lance.abi3.so"
+                for contents in (b"compiled-binding-v1", b"compiled-binding-v2"):
+                    extension.write_bytes(contents)
+                    self.assertEqual(validate_lance_source(root), before)
+
+    def test_editable_binding_does_not_hide_source_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _minimal_lance_source(root)
+            (root / "python/python/lance/lance.abi3.so").write_bytes(b"compiled-binding")
+            expected = source_tree_sha256(root)
+            with mock.patch("artifact.lance_toolchain.LANCE_EXPORTED_SOURCE_SHA256", expected):
+                for relative in (
+                    "python/python/lance/__init__.py",
+                    "rust/example/src/lib.rs",
+                    "python/Cargo.toml",
+                    ".cargo/config.toml",
+                ):
+                    with self.subTest(path=relative):
+                        source = root / relative
+                        original = source.read_bytes()
+                        source.write_bytes(original + b"\nchanged\n")
+                        with self.assertRaisesRegex(SystemExit, "exported source tree"):
+                            validate_lance_source(root)
+                        source.write_bytes(original)
+
+    def test_editable_binding_exclusion_keeps_other_native_inputs(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _minimal_lance_source(root)
+            expected = source_tree_sha256(root)
+            with mock.patch("artifact.lance_toolchain.LANCE_EXPORTED_SOURCE_SHA256", expected):
+                for relative in (
+                    "python/python/lance/helper.abi3.so",
+                    "python/python/lance/lance.abi3.so.config",
+                    "rust/example/src/lance.abi3.so",
+                ):
+                    with self.subTest(path=relative):
+                        native_input = root / relative
+                        native_input.write_bytes(b"native-build-input")
+                        with self.assertRaisesRegex(SystemExit, "exported source tree"):
+                            validate_lance_source(root)
+                        native_input.unlink()
 
     def test_source_tree_fingerprint_rejects_an_untracked_cargo_config(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

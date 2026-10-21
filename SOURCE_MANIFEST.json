@@ -19,6 +19,7 @@
         "README.md",
         "artifact/checks/public_hygiene.py",
         "artifact/compare.py",
+        "artifact/lance_toolchain.py",
         "docs/REPRODUCTION_GUIDE.md",
         "experiments/figure-01-s3-range-get-latency/README.md",
         "experiments/figure-04-object-store-io/README.md",
@@ -53,7 +54,8 @@
         "runners/s3-piecewise-calibration-curves/README.md",
         "runners/table-01-cluster-coarsening/README.md",
         "scripts/setup_ec2.sh",
-        "tests/test_artifact_contracts.py"
+        "tests/test_artifact_contracts.py",
+        "tests/test_paper_runner_contracts.py"
       ],
       "added_files": {
         "tests/test_artifact_compare.py": {
@@ -2160,6 +2162,11 @@
           "sha256": "66cd5d123f69f88794d775d44761b39e16f610bfd5c1d55d6b08208f2ba6859c",
           "size": 5948
         },
+        "artifact/lance_toolchain.py": {
+          "reason": "Exclude the exact maturin editable-binding output from the source fingerprint while retaining all build inputs.",
+          "sha256": "d7a5c1bc0e9bf3b0c61a150c4a1d53fcd705a4a8d9e80f23b78b793974c05a12",
+          "size": 12262
+        },
         "experiments/figure-10-p-sweep-closedloop/render_closed_loop_p_sweep.py": {
           "reason": "Restore the paper figure height and subplot spacing.",
           "sha256": "f7294eea88e8c76c8ff5b58eb14a482473e7a204dfea03f9d6c5f219b9a09166",
@@ -2174,6 +2181,11 @@
           "reason": "Check the official repository exception and reject similarly named private repositories.",
           "sha256": "15a7639bdd0da88c677ada029134ab7df0433c7d2ae8d777c3d46c33fa92f854",
           "size": 27061
+        },
+        "tests/test_paper_runner_contracts.py": {
+          "reason": "Cover editable binding creation and replacement, source-change rejection, and unrelated native input validation.",
+          "sha256": "234495fa23c642a84712d6623457aa5c743de52ce186bcda8b133eed0d2e6ce5",
+          "size": 75047
         }
       }
     },

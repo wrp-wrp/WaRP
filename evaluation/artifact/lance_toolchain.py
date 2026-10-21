@@ -46,6 +46,8 @@ LANCE_BUILD_SOURCE_PATHS = (
 # are not Cargo inputs and must not make an otherwise exact checkout fail the
 # source-export identity gate.
 LANCE_NON_SOURCE_PREFIXES = ("rust/lance-index/tmp/",)
+# Maturin's editable install places the compiled binding beside the Python sources.
+LANCE_GENERATED_FILE_PATHS = {"python/python/lance/lance.abi3.so"}
 LANCE_GENERATED_DIRECTORY_NAMES = {
     ".mypy_cache",
     ".pytest_cache",
@@ -58,9 +60,13 @@ LANCE_GENERATED_DIRECTORY_NAMES = {
 
 def _is_non_source(relative: Path) -> bool:
     rendered = relative.as_posix()
-    return any(rendered.startswith(prefix) for prefix in LANCE_NON_SOURCE_PREFIXES) or any(
-        part in LANCE_GENERATED_DIRECTORY_NAMES or part.endswith(".egg-info")
-        for part in relative.parts
+    return (
+        rendered in LANCE_GENERATED_FILE_PATHS
+        or any(rendered.startswith(prefix) for prefix in LANCE_NON_SOURCE_PREFIXES)
+        or any(
+            part in LANCE_GENERATED_DIRECTORY_NAMES or part.endswith(".egg-info")
+            for part in relative.parts
+        )
     )
 
 
